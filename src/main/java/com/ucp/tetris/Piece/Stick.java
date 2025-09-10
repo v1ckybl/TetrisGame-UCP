@@ -8,6 +8,10 @@ public class Stick {
     }
 
     public String getShapeString() {
-        return symbol + symbol + symbol + "\n" + " " + symbol + " ";
+        // Palo vertical (4 bloques)
+        return symbol + "\n" +
+               symbol + "\n" +
+               symbol + "\n" +
+               symbol;
     }
 }
