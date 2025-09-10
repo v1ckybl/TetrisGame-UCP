@@ -1,4 +1,4 @@
-package src.main.java.com.ucp.tetris.Piece;
+package com.ucp.tetris.Piece;
 
 public class Ele {
     private String symbol;

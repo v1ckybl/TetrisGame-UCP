@@ -1,9 +1,9 @@
 package com.ucp.tetris.Piece;
 
-public class Te {
+public class Stick {
     private String symbol;
 
-    public Te(String symbol) {
+    public Stick(String symbol) {
         this.symbol = symbol;
     }
 
@@ -11,4 +11,3 @@ public class Te {
         return symbol + symbol + symbol + "\n" + " " + symbol + " ";
     }
 }
-
