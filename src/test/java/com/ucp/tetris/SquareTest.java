@@ -1,9 +1,9 @@
-package src.test.java.com.ucp.tetris;
+package test.java.com.ucp.tetris;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import src.main.java.com.ucp.tetris.Piece.Square;
+import main.java.com.ucp.tetris.Piece.Square;
 
 public class SquareTest {
   
