@@ -7,7 +7,7 @@ public class Square {
         this.symbol = symbol;
     }
 
-    public String getShapeString() {
+    public String getCuadrado() {
         return symbol + symbol + "\n" + symbol + symbol;
     }
 }
