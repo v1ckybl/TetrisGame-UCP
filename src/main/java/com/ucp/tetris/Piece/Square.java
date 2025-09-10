@@ -1,4 +1,4 @@
-package src.main.java.com.ucp.tetris.Piece;
+package main.java.com.ucp.tetris.Piece;
 
 public class Square {
     private String symbol;
@@ -7,7 +7,7 @@ public class Square {
         this.symbol = symbol;
     }
 
-    public String getCuadrado() {
+    public String getShapeString() {
         return symbol + symbol + "\n" + symbol + symbol;
     }
 }
