@@ -8,7 +8,9 @@ public class Te {
     }
 
     public String getShapeString() {
-        return symbol + symbol + symbol + "\n" + " " + symbol + " ";
+      
+        return symbol + symbol + symbol + "\n" +
+               " " + symbol + " ";
     }
 }
 
