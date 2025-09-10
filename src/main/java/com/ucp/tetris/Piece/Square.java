@@ -1,4 +1,4 @@
-package com.ucp.tetris;
+package src.main.java.com.ucp.tetris.Piece;
 
 public class Square {
     private String symbol;
