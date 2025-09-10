@@ -1,13 +1,15 @@
-package com.ucp.tetris.Piece.java;
+package com.ucp.tetris;
 
 public class Te {
     private String symbol;
 
-       public Te(String symbol) {
+    public Te(String symbol) {
         this.symbol = symbol;
     }
 
     public String getShapeString() {
-        return symbol + symbol + "\n" + symbol + symbol;
+        // Forma de T:
+        return symbol + symbol + symbol + "\n" + " " + symbol + " ";
     }
 }
+
