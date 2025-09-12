@@ -1,4 +1,4 @@
-package main.java.com.ucp.tetris;
+package com.ucp.tetris;
 
 public class Game {
     
