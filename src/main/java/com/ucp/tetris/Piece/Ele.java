@@ -7,7 +7,7 @@ public class Ele {
         this.symbol = symbol;
     }
 
-    public String getShapeString() {
+    public String getEle() {
         return symbol + "\n" +
                symbol + "\n" +
                symbol + symbol;
