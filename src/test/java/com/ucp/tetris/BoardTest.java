@@ -1,4 +1,4 @@
-package test.java.com.ucp.tetris;
+package com.ucp.tetris;
 
 public class BoardTest {
     

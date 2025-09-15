@@ -1,7 +1,8 @@
 package com.ucp.tetris;
-import main.java.com.ucp.tetris.Piece;
+import com.ucp.tetris.Piece.Square;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.assertEquals; 
 import static org.junit.Assert.assertTrue;
 
 public class PieceTest {
