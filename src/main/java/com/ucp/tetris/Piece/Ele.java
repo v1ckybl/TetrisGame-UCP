@@ -9,8 +9,8 @@ public class Ele {
 
     public String getEle() {
       return symbol + "\n" +
-          symbol + "\n" +
-          symbol + symbol;
+             symbol + "\n" +
+             symbol + symbol;
     }
     
     public void rotarEle90() {
