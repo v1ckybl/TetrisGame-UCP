@@ -10,6 +10,6 @@ public class Ele {
     public void CrearPiezaItest() {
         Ele n = new Ele("L");
         assertNotNull(pieza);
-        assertEquals("L", pieza.getForma());
+        assertEquals("L", Ele.getForma());
     }
 }
