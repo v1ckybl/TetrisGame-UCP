@@ -1,15 +1,22 @@
-package com.ucp.tetris;
-import main.java.com.ucp.tetris.Piece;
-
+package com.ucp.tetris.Piece;
 import static org.junit.Assert.assertEquals; 
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 public class EleTest {
 
     @Test
-    public void CrearPiezaItest() {
-        Ele n = new Ele("L");
+    public void CrearPiezaLtest() {
+        Ele pieza = new Ele("■");
         assertNotNull(pieza);
-        assertEquals("L", pieza.getForma());
+        String resultado = pieza.getEle();
+        String esperado = "■\n■\n■■";
+
+        assertEquals(esperado, resultado);
+    
+    
     }
 }
