@@ -1,4 +1,4 @@
-package com.ucp.tetris;
+package com.ucp.tetris.Piece;
 import main.java.com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals; 
