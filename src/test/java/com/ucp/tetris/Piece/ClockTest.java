@@ -1,4 +1,4 @@
-package com.ucp.tetris;
+package com.ucp.tetris.Piece;
 
 public class ClockTest {
     

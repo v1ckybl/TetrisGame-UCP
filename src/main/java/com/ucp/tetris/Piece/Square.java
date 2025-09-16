@@ -7,23 +7,30 @@ public class Square {
         this.symbol = symbol;
     }
 
-    // Representación del cuadrado 
-    public String getShapeString() {
-        return symbol + symbol + "\n" +
-               symbol + symbol;
-    }
+    public String getCuadrado() {
+    return symbol + symbol + "\n" +
+        symbol + symbol;
+  }
 
-    public String getSymbol() {
-        return symbol;
-    }
+  // rotar 90 grados no cambia la forma del cuadrado
+  public String rotar90() {
+    return getCuadrado();
+  }
 
-    // Rotaciones que no cambian el cuadrado
-    public String rotateRight() {
-        return getShapeString();
-    }
+  //rotar 180 grados no cambia la forma del cuadrado
+  public String rotar180() {
+    return getCuadrado();
+  }
 
-    public String rotateLeft() {
-        return getShapeString();
-    }
+  //rotar 270 grados no cambia la forma del cuadrado
+  public String rotar270() {
+    return getCuadrado();
+  }
+  
+  //rotar 360 grados no cambia la forma del cuadrado
+  public String rotar360() {
+    return getCuadrado();
+  }
 }
+
 

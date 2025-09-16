@@ -1,4 +1,4 @@
-package com.ucp.tetris;
+package com.ucp.tetris.Piece;
 
 import com.ucp.tetris.Piece.Dog;
 import org.junit.Test;

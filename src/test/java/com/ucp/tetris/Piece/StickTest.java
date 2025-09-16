@@ -1,7 +1,6 @@
-package com.ucp.tetris;
+package com.ucp.tetris.Piece;
 import org.junit.Test;
 
-import com.ucp.tetris.Piece.Stick;
 import static org.junit.Assert.assertEquals;
 
 public class StickTest {
