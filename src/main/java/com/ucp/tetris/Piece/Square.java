@@ -8,8 +8,8 @@ public class Square {
   }
 
   public String getCuadrado() {
-    return symbol + symbol + "\n" +
-        symbol + symbol;
+    return symbol + symbol +"\n"+
+           symbol + symbol;
   }
   //la forma del cuadrado no cambia nunca al rotar
   // rotar 90
