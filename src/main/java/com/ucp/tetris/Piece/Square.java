@@ -13,7 +13,7 @@ public class Square {
   }
 
   // rotar 90 grados no cambia la forma del cuadrado
-  public String rotar() {
+  public String rotarSquare90() {
     return getCuadrado();
   }
 
@@ -26,7 +26,7 @@ public class Square {
   public String rotar270() {
     return getCuadrado();
   }
-  
+
   //rotar 360 grados no cambia la forma del cuadrado
   public String rotar360() {
     return getCuadrado();
