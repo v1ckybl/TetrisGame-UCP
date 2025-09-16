@@ -17,10 +17,34 @@ public class SquareTest {
     }
    
     @Test
-    public void rotar90DebeSerIgual() {
+    public void rotar90() {
+      Square pieza = new Square("■");
+      String esperado = pieza.getCuadrado();
+
+      assertEquals(esperado, pieza.rotarSquare90());
+    }
+    
+    @Test
+    public void rotar180() {
+      Square pieza = new Square("■");
+      String esperado = pieza.getCuadrado();
+
+      assertEquals(esperado, pieza.rotarSquare180());
+    }
+    
+    @Test
+    public void rotar270() {
+      Square pieza = new Square("■");
+      String esperado = pieza.getCuadrado();
+
+      assertEquals(esperado, pieza.rotarSquare270());
+    }
+    
+    @Test
+    public void rotar360() {
         Square pieza = new Square("■");
         String esperado = pieza.getCuadrado();
 
-        assertEquals(esperado, pieza.rotarSquare90()); 
+        assertEquals(esperado, pieza.rotarSquare360()); 
     }
 }

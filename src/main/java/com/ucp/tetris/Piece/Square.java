@@ -18,17 +18,17 @@ public class Square {
   }
 
   //rotar 180 grados no cambia la forma del cuadrado
-  public String rotar180() {
+  public String rotarSquare180() {
     return getCuadrado();
   }
 
   //rotar 270 grados no cambia la forma del cuadrado
-  public String rotar270() {
+  public String rotarSquare270() {
     return getCuadrado();
   }
 
   //rotar 360 grados no cambia la forma del cuadrado
-  public String rotar360() {
+  public String rotarSquare360() {
     return getCuadrado();
   }
 }
