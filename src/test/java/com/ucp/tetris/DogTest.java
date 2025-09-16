@@ -12,3 +12,4 @@ public class DogTest {
         assertNotNull(dog);
         assertEquals("X", dog.getSymbol());
     }
+}
