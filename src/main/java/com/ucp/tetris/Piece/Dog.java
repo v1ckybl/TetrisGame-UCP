@@ -7,17 +7,16 @@ public class Dog {
         this.symbol = symbol;
     }
 
-    // Representación en forma de "S"
+    // Representación en forma de S
     public String getShapeString() {
-        return " " + symbol + symbol + "\n" +
-               symbol + symbol + " ";
+        return " " + symbol + symbol + "\n" + symbol + symbol + " ";
     }
 
     public String getSymbol() {
         return symbol;
     }
 
-                                      // Rotación simple (cambia la orientación de S a Z)
+    // Rotación simple (cambia la orientación de S a Z)
     public String rotateRight() {
         return symbol + "\n" +
                symbol + symbol + "\n" +

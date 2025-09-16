@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class DogTest {
 
     @Test
-    public void testDogCreation() {
+    public void CreaciondedogTest() {
         Dog dog = new Dog("X");
         assertNotNull(dog);
         assertEquals("X", dog.getSymbol());
