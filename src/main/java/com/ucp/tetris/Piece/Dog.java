@@ -2,22 +2,31 @@ package com.ucp.tetris.Piece;
 
 public class Dog {
     private String symbol;
-    private boolean isLeft; // true = S (izquierda)  false = Z (derecha)
 
-    public Dog(String symbol, boolean isLeft) {
+    public Dog(String symbol) {
         this.symbol = symbol;
-        this.isLeft = isLeft;
     }
 
+    // Representación en forma de "S"
     public String getShapeString() {
-        if (isLeft) {
-            // Forma S
-            return " " + symbol + symbol + "\n" +
-                   symbol + symbol;
-        } else {
-            // Forma Z
-            return symbol + symbol + "\n" +
-                   " " + symbol + symbol;
-        }
+        return " " + symbol + symbol + "\n" +
+               symbol + symbol + " ";
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+                                      // Rotación simple (cambia la orientación de S a Z)
+    public String rotateRight() {
+        return symbol + "\n" +
+               symbol + symbol + "\n" +
+               " " + symbol;
+    }
+
+    public String rotateLeft() {
+        return " " + symbol + "\n" +
+               symbol + symbol + "\n" +
+               symbol;
     }
 }
