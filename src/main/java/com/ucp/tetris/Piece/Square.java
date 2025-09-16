@@ -1,34 +1,32 @@
 package com.ucp.tetris.Piece;
 
-public class Square {
-  private String symbol;
+public class Dog {
+    private String symbol;
 
-  public Square(String symbol) {
-    this.symbol = symbol;
-  }
+    public Dog(String symbol) {
+        this.symbol = symbol;
+    }
 
-  public String getCuadrado() {
-    return symbol + symbol +"\n"+
-           symbol + symbol;
-  }
-  //la forma del cuadrado no cambia nunca al rotar
-  // rotar 90
-  public String rotarSquare90() {
-    return getCuadrado();
-  }
+    // Representación en forma de "S"
+    public String getShapeString() {
+        return " " + symbol + symbol + "\n" +
+               symbol + symbol + " ";
+    }
 
-  //rotar 180
-  public String rotarSquare180() {
-    return getCuadrado();
-  }
+    public String getSymbol() {
+        return symbol;
+    }
 
-  //rotar 270
-  public String rotarSquare270() {
-    return getCuadrado();
-  }
+                                      // Rotación simple (cambia la orientación de S a Z)
+    public String rotateRight() {
+        return symbol + "\n" +
+               symbol + symbol + "\n" +
+               " " + symbol;
+    }
 
-  //rotar 360
-  public String rotarSquare360() {
-    return getCuadrado();
-  }
+    public String rotateLeft() {
+        return " " + symbol + "\n" +
+               symbol + symbol + "\n" +
+               symbol;
+    }
 }
