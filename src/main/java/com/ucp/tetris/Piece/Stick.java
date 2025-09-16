@@ -7,10 +7,15 @@ public class Stick {
         this.symbol = symbol;
     }
 
-    public String getShapeString() {
-        return symbol + "\n" +
-               symbol + "\n" +
-               symbol + "\n" +
-               symbol;
+    public String getStick() {
+      return symbol + "\n" +
+             symbol + "\n" +
+             symbol + "\n" +
+             symbol;
+    }
+   
+
+    public String rotarStick90() {
+          return symbol + symbol + symbol + symbol;
     }
 }

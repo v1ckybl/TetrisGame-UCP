@@ -7,13 +7,23 @@ public class Square {
         this.symbol = symbol;
     }
 
-    public String getCuadrado() {
-      return symbol + symbol + "\n" + symbol + symbol;
+    // Representación del cuadrado 
+    public String getShapeString() {
+        return symbol + symbol + "\n" +
+               symbol + symbol;
     }
 
-    // metodorotar
+    public String getSymbol() {
+        return symbol;
+    }
 
-  private String rotate90(String shape) {
-      
-      }
-      
+    // Rotaciones que no cambian el cuadrado
+    public String rotateRight() {
+        return getShapeString();
+    }
+
+    public String rotateLeft() {
+        return getShapeString();
+    }
+}
+

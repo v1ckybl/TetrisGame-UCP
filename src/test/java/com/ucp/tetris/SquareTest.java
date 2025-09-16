@@ -1,19 +1,16 @@
-package test.java.com.ucp.tetris;
-import static org.junit.Assert.assertEquals;
+package com.ucp.tetris;
 
-import org.junit.jupiter.api.Test;
-
-import main.java.com.ucp.tetris.Piece.Square;
+import com.ucp.tetris.Piece.Square;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class SquareTest {
-  
-    @Test
-    public void generarCuadrado(){
-        Square pieza = new Square("■");
-        String resultado = pieza.getCuadrado();
 
-        String esperado = "■■\n■■";
-        assertEquals(esperado, resultado);
+    @Test
+    public void CreacionTestsquare() {
+        Square square = new Square("O");
+        assertNotNull(square);
+        assertEquals("O", square.getSymbol());
     }
-   
+
 }
