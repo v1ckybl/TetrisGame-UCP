@@ -1,0 +1,10 @@
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Board.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Clock.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Game.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/ITick.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Piece/Dog.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Piece/Ele.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Piece/Square.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Piece/Stick.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Piece/Te.java
+/workspaces/TetrisGame-UCP/src/main/java/com/ucp/tetris/Rotar.java
