@@ -60,3 +60,6 @@ public class PieceTest {
         assertEquals("X", dog.getSymbol());
     }*/
 }
+    
+
+    
