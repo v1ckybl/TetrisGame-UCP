@@ -1,11 +1,12 @@
 package com.ucp.tetris.Piece;
 import static org.junit.Assert.assertEquals; 
-import static org.junit.Assert.assertTrue;
+import com.ucp.tetris.Piece.Ele;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 
+@SuppressWarnings("unused")
 public class EleTest {
 
     @Test
