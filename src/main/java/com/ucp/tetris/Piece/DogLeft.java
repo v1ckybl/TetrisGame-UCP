@@ -1,8 +1,6 @@
 package com.ucp.tetris.Piece;
 
-public class DogLeft {
-
-    public class Dog {
+    public class DogLeft {
         private String symbol;
 
         public Dog(String symbol) {
@@ -18,4 +16,4 @@ public class DogLeft {
         }
 
     }
-}
+

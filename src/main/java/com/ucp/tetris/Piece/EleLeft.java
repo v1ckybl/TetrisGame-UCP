@@ -1,9 +1,9 @@
 package com.ucp.tetris.Piece;
 
-public class Ele {
+public class EleLeft {
     private String symbol;
 
-    public Ele(String symbol) {
+    public EleLeft(String symbol) {
         this.symbol = symbol;
     }
 
