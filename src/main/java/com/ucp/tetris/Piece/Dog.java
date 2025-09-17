@@ -7,8 +7,7 @@ public class Dog {
         this.symbol = symbol;
     }
 
-    // Representación en forma de S
-    public String getShapeString() {
+    public String getShapeString() {    // Representación en forma de S
         return " " + symbol + symbol + "\n" + symbol + symbol + " ";
     }
 
@@ -16,8 +15,7 @@ public class Dog {
         return symbol;
     }
 
-    // Rotación simple (cambia la orientación de S a Z)
-    public String rotateRight() {
+    public String rotateRight() {    // Rotación simple (cambia la orientación de S a Z)
         return symbol + "\n" +
                symbol + symbol + "\n" +
                " " + symbol;
