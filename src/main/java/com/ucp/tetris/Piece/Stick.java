@@ -3,7 +3,7 @@ package com.ucp.tetris.Piece;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stick {
+public class Stick extends PieceBase {
     private String symbol;
     private List<List<String>> shape;
 
