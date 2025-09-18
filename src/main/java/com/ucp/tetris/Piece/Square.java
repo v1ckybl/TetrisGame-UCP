@@ -1,36 +1,32 @@
 package com.ucp.tetris.Piece;
 
-public class Square {
-    private String symbol;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Square(String symbol) {
+public class Square {
+  private String symbol;
+  private List<List<String>> shape;
+
+  public Square(String symbol) {
         this.symbol = symbol;
+        this.shape = new ArrayList<>(List.of(
+            List.of(symbol, symbol),
+            List.of(symbol, symbol);
     }
 
-    public String getCuadrado() {
-    return symbol + symbol + "\n" +
-        symbol + symbol;
+  public String getSquare() {
+    StringBuilder sb = new StringBuilder();
+    for (List<String> row : shape) {
+      for (String cell : row) {
+        sb.append(cell != null ? cell : " "); //Si la celda no es null, agrega el symbol a la cadena.
+      }
+      sb.append("\n");
+    }
+    return sb.toString();
   }
 
-  // rotar 90 grados no cambia la forma del cuadrado
-  public String rotar90() {
-    return getCuadrado();
-  }
 
-  //rotar 180 grados no cambia la forma del cuadrado
-  public String rotar180() {
-    return getCuadrado();
-  }
 
-  //rotar 270 grados no cambia la forma del cuadrado
-  public String rotar270() {
-    return getCuadrado();
-  }
-  
-  //rotar 360 grados no cambia la forma del cuadrado
-  public String rotar360() {
-    return getCuadrado();
-  }
+
 }
-
 
