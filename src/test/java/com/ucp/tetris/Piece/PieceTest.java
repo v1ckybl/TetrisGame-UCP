@@ -27,13 +27,12 @@ public class PieceTest {
 
    @Test
     public void generarEleLeft() {
-    /*     Ele pieza = new Ele("■");
+        EleLeft pieza = new EleLeft("■");
         assertNotNull(pieza);
         String resultado = pieza.getEle();
-        String esperado = "■\n■\n■■";  
+        String esperado = " ■\n ■\n■■";  
 
         assertEquals(esperado, resultado);
-    */
     }
     
     @Test
@@ -46,20 +45,26 @@ public class PieceTest {
     }
 
     @Test
-    public void generarDogRight() {
-        Dog dog = new Dog("X");
-        assertNotNull(dog);
-        assertEquals("X", dog.getSymbol());
-    }
+    public void generarDogRightForma() {
+        Dog dog = new Dog("X");    
+        assertNotNull(dog);                  
+        assertEquals("X", dog.getSymbol());  
+
+        String resultado = dog.getDog();     
+        String esperado = " XX\nXX ";        
+
+    assertEquals(esperado, resultado);   
+}
 
 
     @Test
-    public void generarDogLeft() {
-    /*     Dog dog = new Dog("X");
-        assertNotNull(dog);
-        assertEquals("X", dog.getSymbol());
-    }*/
-}
+    public void generarDogLeftForma() {
+        DogLeft dog = new DogLeft();
+        String resultado = dog.getDog();     
+        String esperado = "XX \n XX";  
     
+        assertEquals(esperado, resultado);
+    }
+}
 
     
