@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Te extends PieceBase {
-  
+
   private String symbol;
   private List<List<String>> shape;
 
@@ -28,9 +28,23 @@ public class Te extends PieceBase {
   }
 
   // llamar el metodo para rotar de la interfaz Irotar que implementa PieceBase
-   public void rotateRight() {
+  public void rotateRight() {
     super.rotateRight();
-    // Lógica adicional si es necesario
+  
+    // Actualizar la forma después de rotar
+    List<List<String>> rotatedShape = new ArrayList<>();
+    int rows = shape.size();
+    int cols = shape.get(0).size();
+    for (int c = 0; c < cols; c++) {
+      List<String> newRow = new ArrayList<>();
+      for (int r = rows - 1; r >= 0; r--) {
+        newRow.add(shape.get(r).get(c));
+      }
+      rotatedShape.add(newRow);
+    }
+    shape = rotatedShape;
 
+  
+  }
 }
 
