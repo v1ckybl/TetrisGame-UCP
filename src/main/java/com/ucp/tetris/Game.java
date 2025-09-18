@@ -18,3 +18,6 @@ public class Game {
     public Board getTablero() {  //Devuelve el tablero actual
         return tablero;
     }
+}
+
+  
