@@ -6,7 +6,7 @@ import java.util.List;
 public class Ele {
     private String symbol;
     private List<List<String>> shape;
-    
+
     public Ele(String symbol) {
         this.symbol = symbol;
         this.shape = new ArrayList<>();
@@ -44,4 +44,4 @@ public class Ele {
             int rows = shape.size();
             int cols = shape.get(0).size();
 
-
+        }
