@@ -8,7 +8,8 @@ public class Dog {
     }
 
     public String getShapeString() {    // Representación en forma de S
-        return " " + symbol + symbol + "\n" + symbol + symbol + " ";
+        return " " + symbol + symbol + "\n"
+         + symbol + symbol + " ";
     }
 
     public String getSymbol() {
