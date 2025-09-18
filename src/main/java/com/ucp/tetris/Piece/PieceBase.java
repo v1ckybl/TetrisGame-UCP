@@ -17,12 +17,12 @@ public void setShape(List<List<String>> newShape) {
 }
 
 
-    @Override
+    
     public void rotateLeft() {
         shape = rotateMatrixLeft(shape);
     }
 
-    @Override
+    
     public void rotateRight() {
         shape = rotateMatrixRight(shape);
     }
