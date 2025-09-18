@@ -19,5 +19,8 @@ public class Clock implements ITick {
             ticks = 0;
         }
     }
+     public int getTicks() {
+        return ticks;
+    }
     
 }
