@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Stick extends PieceBase {
-    private String symbol;
-    private List<List<String>> shape;
 
-    public Stick(String symbol) {
-        this.symbol = symbol;
-        this.shape = new ArrayList<>(List.of(
+  public Stick(String symbol) {
+        setShape (new ArrayList<>(List.of(
             List.of(symbol),
             List.of(symbol),
             List.of(symbol),
-            List.of(symbol)));
+            List.of(symbol))));
     }
-    public String getStick() {
+
+  public String getStick() {
         StringBuilder sb = new StringBuilder();
-        for (List<String> row : shape) {
+        for (List<String> row : getShape()) {
             for (String cell : row) {
                 sb.append(cell != null ? cell : " ");
             }
@@ -26,6 +24,14 @@ public class Stick extends PieceBase {
         return sb.toString();
     }
 
+ @Override
+    public ArrayList<ArrayList<String>> rotar() {
+        // Rotar a la derecha por defecto
+        rotateRight();
+        // Convertir a ArrayList<ArrayList<String>> para cumplir la interfaz
+        return new ArrayList<>(getShape().stream()
+                .map(ArrayList::new)
+                .toList());
+    }
 
-    
 }

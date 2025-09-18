@@ -3,20 +3,34 @@ package com.ucp.tetris.Piece;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EleLeft {
-  private String symbol;
-  private List<List<String>> shape;
+public class EleLeft extends PieceBase {
 
-    public EleLeft(String symbol) {
-        this.symbol = symbol;
-        this.shape = new ArrayList<>(List.of(
+  public EleLeft(String symbol) {
+        setShape (new ArrayList<>(List.of(
             List.of(null, symbol),
             List.of(null, symbol),
-            List.of(symbol, symbol)));
+            List.of(symbol, symbol))));
     }
-    
-    public void rotarEle90() {
-          //return COMO ES LA ELE ROTADA???????;
-  }
+
+  public String getEleLeft() {
+        StringBuilder sb = new StringBuilder();
+        for (List<String> row : getShape()) {
+            for (String cell : row) {
+                sb.append(cell != null ? cell : " ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+ @Override
+    public ArrayList<ArrayList<String>> rotar() {
+        // Rotar a la derecha por defecto
+        rotateRight();
+        // Convertir a ArrayList<ArrayList<String>> para cumplir la interfaz
+        return new ArrayList<>(getShape().stream()
+                .map(ArrayList::new)
+                .toList());
+    }
 
 }

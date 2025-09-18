@@ -32,8 +32,5 @@ public class Square extends PieceBase {
                 .toList());
     }
 
-
-
-
 }
 
