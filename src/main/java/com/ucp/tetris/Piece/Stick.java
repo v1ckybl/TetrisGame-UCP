@@ -13,25 +13,31 @@ public class Stick extends PieceBase {
             List.of(symbol))));
     }
 
-  public String getStick() {
-        StringBuilder sb = new StringBuilder();
-        for (List<String> row : getShape()) {
-            for (String cell : row) {
-                sb.append(cell != null ? cell : " ");
-            }
-            sb.append("\n");
+    public String getStick() {
+      StringBuilder sb = new StringBuilder();
+      for (List<String> row : getShape()) {
+        for (String cell : row) {
+          sb.append(cell != null ? cell : " ");
         }
-        return sb.toString();
+        sb.append("\n");
+      }
+      return sb.toString();
     }
+    
+    private List<List<String>> rotateMatrixLeft(List<List<String>> matrix) {
+        int rows = matrix.size();
+        int cols = matrix.get(0).size();
+        List<List<String>> rotated = new ArrayList<>();
 
- @Override
-    public ArrayList<ArrayList<String>> rotar() {
-        // Rotar a la derecha por defecto
-        rotateRight();
-        // Convertir a ArrayList<ArrayList<String>> para cumplir la interfaz
-        return new ArrayList<>(getShape().stream()
-                .map(ArrayList::new)
-                .toList());
+        for (int col = cols - 1; col >= 0; col--) {
+            List<String> newRow = new ArrayList<>();
+            for (int row = 0; row < rows; row++) {
+                newRow.add(matrix.get(row).get(col));
+            }
+            rotated.add(newRow);
+        }
+        return rotated;
     }
+    
 
 }

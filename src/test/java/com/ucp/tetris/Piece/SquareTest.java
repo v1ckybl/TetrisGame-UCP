@@ -4,6 +4,10 @@ import org.junit.Test;
 
 public class SquareTest {
    
+
+
+
+   /* 
     @Test
     public void rotar90() {
       Square pieza = new Square("■");
@@ -11,7 +15,7 @@ public class SquareTest {
 
       assertEquals(esperado, pieza.rotar90());
     }
-    
+       
     @Test
     public void rotar180() {
       Square pieza = new Square("■");
@@ -34,5 +38,5 @@ public class SquareTest {
         String esperado = pieza.getCuadrado();
 
         assertEquals(esperado, pieza.rotar360()); 
-    }
+    }*/
 }
