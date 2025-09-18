@@ -1,13 +1,15 @@
 package com.ucp.tetris.Piece;
 
+import java.util.ArrayList;
+
 import com.ucp.tetris.IRotar;
 
 public abstract class PieceBase implements IRotar {
     private String symbol;
-    private String[] rotations;
+    private ArrayList<String> rotations;
     private int rotationIndex = 0;
 
-    public PieceBase(String symbol, String[] rotations){
+    public PieceBase(String symbol, ArrayList<String> rotations){
         this.symbol = symbol;
         this.rotations = rotations;
 
@@ -19,22 +21,21 @@ public abstract class PieceBase implements IRotar {
     }
 
     public String getShapeString(){
-        return rotations[rotationIndex];
-
+        return rotations.get(rotationIndex);
     }
 
 
     @Override
     public void rotateRight() {
 
-        rotationIndex = (rotationIndex + 3) % 4;
+        rotationIndex = (rotationIndex + 1) % rotations.size();
         
     }
 
     @Override
     public void rotateLeft() {
 
-        rotationIndex = (rotationIndex + 1) % 4;
+       rotationIndex = (rotationIndex + rotations.size() - 1) % rotations.size();
         
     }
     
