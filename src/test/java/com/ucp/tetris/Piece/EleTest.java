@@ -23,17 +23,20 @@ public class EleTest {
         assertTrue(formasIguales(esperado, actual));
     }
 
-    private boolean formasIguales(List<List<String>> f1, List<List<String>> f2) {
-        if (f1.size() != f2.size()) return false;
-        for (int i = 0; i < f1.size(); i++) {
-            List<String> row1 = f1.get(i);
-            List<String> row2 = f2.get(i);
-            if (row1.size() != row2.size()) return false;
-            for (int j = 0; j < row1.size(); j++) {
-                if (row1.get(j) != row2.get(j)) return false;
-            }
+    private boolean formasIguales(List<List<String>> a, List<List<String>> b) {
+    if (a.size() != b.size()) return false;
+    for (int i = 0; i < a.size(); i++) {
+        List<String> filaA = a.get(i);
+        List<String> filaB = b.get(i);
+        if (filaA.size() != filaB.size()) return false;
+        for (int j = 0; j < filaA.size(); j++) {
+            String celdaA = filaA.get(j);
+            String celdaB = filaB.get(j);
+            if (celdaA == null && celdaB != null) return false;
+            if (celdaA != null && !celdaA.equals(celdaB)) return false;
         }
-        return true;
-    
     }
+    return true;
+}
+
 }
