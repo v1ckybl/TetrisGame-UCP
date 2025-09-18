@@ -22,13 +22,4 @@ public class Te extends PieceBase {
     return sb.toString();
   }
 
-  @Override
-  public ArrayList<ArrayList<String>> rotar() {
-    // Rotar a la derecha por defecto
-    rotateRight();
-    // Convertir a ArrayList<ArrayList<String>> para cumplir la interfaz
-    return new ArrayList<>(getShape().stream()
-        .map(ArrayList::new)
-        .toList());
-  }
 }
