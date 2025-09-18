@@ -8,24 +8,12 @@ public class Ele {
   private List<List<String>> shape;
 
   public Ele(String symbol) {
-    this.symbol = symbol;
-    this.shape = new ArrayList<>();
-    // Fila 1
-    List<String> row1 = new ArrayList<>();
-    row1.add(symbol);
-    row1.add(null);
-    this.shape.add(row1);
-    // Fila 2
-    List<String> row2 = new ArrayList<>();
-    row2.add(symbol);
-    row2.add(null);
-    this.shape.add(row2);
-    // Fila 3
-    List<String> row3 = new ArrayList<>();
-    row3.add(symbol);
-    row3.add(symbol);
-    this.shape.add(row3);
-  }
+        this.symbol = symbol;
+        this.shape = new ArrayList<>(List.of(
+            List.of(symbol, null),
+            List.of(symbol, null),
+            List.of(symbol, symbol)));
+    }
 
   public String getEle() {
     StringBuilder sb = new StringBuilder();
