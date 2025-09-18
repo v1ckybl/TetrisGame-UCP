@@ -5,7 +5,7 @@ import com.ucp.tetris.IRotar;
 public abstract class PieceBase implements IRotar {
     private String symbol;
     private String[] rotations;
-    private int rotationIndex;
+    private int rotationIndex = 0;
 
     public PieceBase(String symbol, String[] rotations){
         this.symbol = symbol;
@@ -25,14 +25,14 @@ public abstract class PieceBase implements IRotar {
 
 
     @Override
-    public void rotateRight{
+    public void rotateRight() {
 
         rotationIndex = (rotationIndex + 3) % 4;
         
     }
 
-     @Override
-    public void rotateLeft{
+    @Override
+    public void rotateLeft() {
 
         rotationIndex = (rotationIndex + 1) % 4;
         
