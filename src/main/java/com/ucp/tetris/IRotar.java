@@ -1,6 +1,6 @@
 package com.ucp.tetris;
 
-public interface Rotar {
+public interface IRotar {
     void rotar90();
     void rotar180();
     void rotar270();
