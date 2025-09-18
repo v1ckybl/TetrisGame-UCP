@@ -1,30 +1,23 @@
 package com.ucp.tetris.Piece;
+import java.util.ArrayList;
+import java.util.List;
+public class Dog extends PieceBase {
 
-public class Dog {
-    private String symbol;
-
-    public Dog(String symbol) {
-        this.symbol = symbol;
+  public Dog(String symbol) {
+        setShape (new ArrayList<>(List.of(
+            List.of(null, symbol, symbol),
+            List.of(symbol, symbol, null))));
     }
 
-    public String getShapeString() {    // Representación en forma de S
-        return " " + symbol + symbol + "\n"
-         + symbol + symbol + " ";
+  public String getDog() {
+        StringBuilder sb = new StringBuilder();
+        for (List<String> row : getShape()) {
+            for (String cell : row) {
+                sb.append(cell != null ? cell : " ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public String rotateRight() {    // Rotación simple (cambia la orientación de S a Z)
-        return symbol + "\n" +
-               symbol + symbol + "\n" +
-               " " + symbol;
-    }
-
-    public String rotateLeft() {
-        return " " + symbol + "\n" +
-               symbol + symbol + "\n" +
-               symbol;
-    }
 }
