@@ -31,19 +31,8 @@ public class Te extends PieceBase {
   public void rotateRight() {
     super.rotateRight();
   
-    // Actualizar la forma después de rotar
-    List<List<String>> rotatedShape = new ArrayList<>();
-    int rows = shape.size();
-    int cols = shape.get(0).size();
-    for (int c = 0; c < cols; c++) {
-      List<String> newRow = new ArrayList<>();
-      for (int r = rows - 1; r >= 0; r--) {
-        newRow.add(shape.get(r).get(c));
-      }
-      rotatedShape.add(newRow);
-    }
-    shape = rotatedShape;
-
+  // Actualizar la forma después de rotar
+   
   
   }
 }
