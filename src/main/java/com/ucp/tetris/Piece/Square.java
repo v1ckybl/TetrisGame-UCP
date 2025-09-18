@@ -3,15 +3,16 @@ package com.ucp.tetris.Piece;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Square {
+public class Square extends PieceBase {
   private String symbol;
   private List<List<String>> shape;
 
   public Square(String symbol) {
+      super(symbol);
         this.symbol = symbol;
         this.shape = new ArrayList<>(List.of(
             List.of(symbol, symbol),
-            List.of(symbol, symbol);
+            List.of(symbol, symbol)));
     }
 
   public String getSquare() {
