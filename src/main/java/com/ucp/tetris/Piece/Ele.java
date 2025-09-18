@@ -10,9 +10,10 @@ public class Ele {
   public Ele(String symbol) {
         this.symbol = symbol;
         this.shape = new ArrayList<>(List.of(
-            List.of(symbol, null),
-            List.of(symbol, null),
-            List.of(symbol, symbol)));
+            new ArrayList<>(List.of(symbol, null)),
+            new ArrayList<>(List.of(symbol, null)),
+            new ArrayList<>(List.of(symbol, symbol))
+        ));
     }
 
   public String getEle() {
@@ -27,10 +28,5 @@ public class Ele {
   }
 
   // Rotar 90 grados a la derecha
-  public void rotateRight() {
-    List<List<String>> rotatedShape = new ArrayList<>();
-    int rows = shape.size();
-    int cols = shape.get(0).size();
-
-  }
+  
 }
