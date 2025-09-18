@@ -6,7 +6,7 @@ import java.util.List;
 import com.ucp.tetris.IRotar;
 
 public abstract class PieceBase implements IRotar {
-    private  List<List<String>> shape;
+    private List<List<String>> shape;
 
     public List<List<String>> getShape() {
     return shape;
@@ -17,12 +17,12 @@ public void setShape(List<List<String>> newShape) {
 }
 
 
-    
+    @Override
     public void rotateLeft() {
         shape = rotateMatrixLeft(shape);
     }
 
-    
+    @Override
     public void rotateRight() {
         shape = rotateMatrixRight(shape);
     }
