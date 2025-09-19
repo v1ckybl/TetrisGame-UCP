@@ -75,8 +75,7 @@ public void setShape(List<List<String>> newShape) {
     }
 
     public void moveCurrentPieceDown(Board board) {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'moveCurrentPieceDown'");
+      
     }
 }
 
