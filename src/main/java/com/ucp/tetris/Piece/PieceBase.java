@@ -8,7 +8,23 @@ import com.ucp.tetris.IRotar;
 
 public abstract class PieceBase implements IRotar {
     private List<List<String>> shape;
+    private int filaActual;
+    private int columnaActual;
 
+    public int getFila() {
+        return filaActual;
+    }
+
+    public int getColumna() {
+        return columnaActual;
+    }
+
+    public void setPosicion(int fila, int columna) {
+        this.filaActual = fila;
+        this.columnaActual = columna;
+    }
+
+    
     public List<List<String>> getShape() {
     return shape;
 }
