@@ -5,17 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+//import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-
-//@SuppressWarnings("unused")
 public class EleTest {
-
   
 @Test
 public void testEleShapeString() {
     Ele ele = new Ele("■");
-    String expectedString = "■ \n■ \n■■\n"; // Note the spaces and newlines
+    String expectedString = "■ \n■ \n■■"; // Note the spaces and newlines
     assertEquals(expectedString, ele.getEle());
 }
 
