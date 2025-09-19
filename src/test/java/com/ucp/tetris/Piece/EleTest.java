@@ -34,5 +34,19 @@ public void testEleShapeString() {
         assertEquals(expectedRotatedShape, ele.getShape());
     }
     
+@Test
+    public void testEleRotateRight180() {
+        Ele ele = new Ele("■");
+        ele.rotateRight();
+        ele.rotateRight();
 
+        String symbol = "■";
+        List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+            Arrays.asList(symbol, symbol),
+            Arrays.asList(null, symbol),
+            Arrays.asList(null, symbol)
+        ));
+        
+        assertEquals(expectedRotatedShape, ele.getShape());
+    }
 }
