@@ -1,7 +1,8 @@
 package com.ucp.tetris.Piece;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
 import com.ucp.tetris.Board;
 
 public class BoardTest {
@@ -26,7 +27,7 @@ public class BoardTest {
         board.tick();
     }
 
-    // El Ele tiene altura 2, así que su fila máxima es 8 (para que no se salga del tablero de 10 filas)
+    // El Ele tiene altura 3, así que su fila máxima es 7 (para que no se salga del tablero de 10 filas)
     assertEquals(7, ele.getFila());
 }
 
