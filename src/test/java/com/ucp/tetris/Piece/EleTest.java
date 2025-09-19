@@ -9,19 +9,13 @@ import org.junit.Test;
 //@SuppressWarnings("unused")
 public class EleTest {
 
-  @Test
-    public void testEleShape() {
-        Ele ele = new Ele("■");
-
-        String symbol = "■";
-        List<List<String>> expectedShape = List.of(
-            List.of(symbol, null),
-            List.of(symbol, null),
-            List.of(symbol, symbol)
-        );
-
-        assertEquals(expectedShape, ele.getEle());
-    }
+  
+@Test
+public void testEleShapeString() {
+    Ele ele = new Ele("■");
+    String expectedString = "■ \n■ \n■■\n"; // Note the spaces and newlines
+    assertEquals(expectedString, ele.getEle());
+}
 
 
 @Test
