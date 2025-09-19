@@ -1,15 +1,16 @@
 package com.ucp.tetris.Piece;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EleLeft extends PieceBase {
 
   public EleLeft(String symbol) {
-        setShape (new ArrayList<>(List.of(
-            List.of(null, symbol),
-            List.of(null, symbol),
-            List.of(symbol, symbol))));
+        setShape (new ArrayList<>(Arrays.asList(
+            Arrays.asList(null, symbol),
+            Arrays.asList(null, symbol),
+            Arrays.asList(symbol, symbol))));
     }
 
   public String getEleLeft() {
