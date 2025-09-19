@@ -25,18 +25,24 @@ public class EleTest {
 
     private boolean formasIguales(List<List<String>> a, List<List<String>> b) {
     if (a.size() != b.size()) return false;
+
     for (int i = 0; i < a.size(); i++) {
         List<String> filaA = a.get(i);
         List<String> filaB = b.get(i);
+
         if (filaA.size() != filaB.size()) return false;
+
         for (int j = 0; j < filaA.size(); j++) {
             String celdaA = filaA.get(j);
             String celdaB = filaB.get(j);
+
             if (celdaA == null && celdaB != null) return false;
             if (celdaA != null && !celdaA.equals(celdaB)) return false;
         }
     }
+
     return true;
 }
+
 
 }
