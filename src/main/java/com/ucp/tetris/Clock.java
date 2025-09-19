@@ -13,14 +13,14 @@ public class Clock implements ITick {
 
     @Override
     public void tick() {
-        ticks++;
-        if (ticks >= interval) {
-            callback.run();
-            ticks = 0;
-        }
+      ticks++;
+      if (ticks >= interval) {
+        callback.run();
+        ticks = 0;
+      }
     }
-     public int getTicks() {
+
+    public int getTicks() {
         return ticks;
     }
-    
 }
