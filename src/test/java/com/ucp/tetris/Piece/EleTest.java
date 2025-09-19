@@ -35,18 +35,48 @@ public void testEleShapeString() {
     }
     
 @Test
-    public void testEleRotateRight180() {
-        Ele ele = new Ele("■");
-        ele.rotateRight();
-        ele.rotateRight();
+public void testEleRotateRight180() {
+  Ele ele = new Ele("■");
+  ele.rotateRight();
+  ele.rotateRight();
 
-        String symbol = "■";
-        List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
-            Arrays.asList(symbol, symbol),
-            Arrays.asList(null, symbol),
-            Arrays.asList(null, symbol)
-        ));
-        
-        assertEquals(expectedRotatedShape, ele.getShape());
-    }
+  String symbol = "■";
+  List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+      Arrays.asList(symbol, symbol),
+      Arrays.asList(null, symbol),
+      Arrays.asList(null, symbol)));
+
+  assertEquals(expectedRotatedShape, ele.getShape());
+}
+    
+@Test
+public void testEleRotateLeft() {
+  Ele ele = new Ele("■");
+  ele.rotateLeft();
+
+  String symbol = "■";
+  List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+      Arrays.asList(null, null, symbol),
+      Arrays.asList(symbol, symbol, symbol)));
+
+  assertEquals(expectedRotatedShape, ele.getShape());
+}
+
+@Test
+public void testEleRotateRight270() {
+  Ele ele = new Ele("■");
+  ele.rotateRight();
+  ele.rotateRight();
+  ele.rotateRight();
+
+
+  String symbol = "■";
+  List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+      Arrays.asList(null, null, symbol),
+      Arrays.asList(symbol, symbol, symbol)));
+
+
+  assertEquals(expectedRotatedShape, ele.getShape());
+}
+    
 }
