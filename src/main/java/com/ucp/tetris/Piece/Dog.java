@@ -4,9 +4,9 @@ import java.util.List;
 public class Dog extends PieceBase {
 
   public Dog(String symbol) {
-        setShape (new ArrayList<>(List.of(
-            List.of(null, symbol, symbol),
-            List.of(symbol, symbol, null))));
+        setShape (new ArrayList<>(Arrays.asList(
+            Arrays.asList(null, symbol, symbol),
+            Arrays.asList(symbol, symbol, null))));
     }
 
   public String getDog() {
