@@ -31,25 +31,22 @@ public class BoardTest {
 }
 
     @Test
-    public void testEleChocaConOtraPieza() {
+    public void testColision() {
         Board board = new Board();
 
-        // Fijamos un cuadrado en el fondo en columna 5
         Square bloqueFijo = new Square("■");
-        bloqueFijo.setPosicion(18, 5); // ocupa filas 18 y 19
+        bloqueFijo.setPosicion(18, 5); // bloque que ya está ocupa filas 18 y 19
         board.fijarPieza(bloqueFijo);
 
-        // Creamos una Ele que empieza en fila 0, columna 5
         Ele ele = new Ele("■");
         ele.setPosicion(0, 5);
         board.setCurrentPiece(ele);
 
-        // Hacemos caer la Ele simulando ticks
         for (int i = 0; i < 20; i++) {
             board.tick();
         }
 
-        // La Ele debería detenerse en fila 15, justo encima del cuadrado
+        // ele encima del cuadrado
         assertEquals(15, ele.getFila());
 }
 
