@@ -26,33 +26,33 @@ public class StickTest {
   //test rotar derecha
   @Test
   public void testStickRotateRightOnce() {
-    Stick Stick = new Stick("■");
-    Stick.rotateRight();
+    Stick stick = new Stick("■");
+    stick.rotateRight();
 
     String symbol = "■";
     List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
         Arrays.asList(symbol, symbol, symbol, symbol)));
 
-    assertEquals(expectedRotatedShape, Stick.getShape());
+    assertEquals(expectedRotatedShape, stick.getShape());
   }
 
   @Test
   public void testStickRotateLeft() {
-    Stick Stick = new Stick("■");
-    Stick.rotateLeft();
+    Stick stick = new Stick("■");
+    stick.rotateLeft();
 
     String symbol = "■";
     List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
         Arrays.asList(symbol, symbol, symbol, symbol)));
 
-    assertEquals(expectedRotatedShape, Stick.getShape());
+    assertEquals(expectedRotatedShape, stick.getShape());
   }
 
 @Test
   public void testStickRotateRight180() {
-    Stick Stick = new Stick("■");
-    Stick.rotateRight();
-    Stick.rotateRight();
+    Stick stick = new Stick("■");
+    stick.rotateRight();
+    stick.rotateRight();
 
     String symbol = "■";
     List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
@@ -61,7 +61,7 @@ public class StickTest {
         Arrays.asList(symbol),
         Arrays.asList(symbol)));
 
-    assertEquals(expectedRotatedShape, Stick.getShape());
+    assertEquals(expectedRotatedShape, stick.getShape());
   }
 
 
