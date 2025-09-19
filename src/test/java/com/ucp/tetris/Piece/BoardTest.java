@@ -28,7 +28,9 @@ public class BoardTest {
     }
 
     assertEquals(17, ele.getFila());
-  }
+    assertEquals(5, ele.getColumna()); 
+}
+
 
   @Test
     public void testSquareCaeEncimaDeEle() {
