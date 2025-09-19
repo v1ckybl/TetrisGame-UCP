@@ -34,7 +34,7 @@ public class BoardTest {
     public void testSquareCaeEncimaDeEle() {
     Board board = new Board();
 
-    // 1. Crear la Ele y dejarla caer hasta el fondo
+    // cae una ele
     Ele ele = new Ele("■");
     ele.setPosicion(0, 5);
     board.setCurrentPiece(ele);
