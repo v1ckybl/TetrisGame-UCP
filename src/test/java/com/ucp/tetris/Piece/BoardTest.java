@@ -13,21 +13,21 @@ public class BoardTest {
     }
 
     @Test
-    public void testSquareCaeHastaElFondo() {
+    public void testEleCaeHastaElFondo() {
     Board board = new Board();
-    Square square = new Square("■");
+    Ele ele = new Ele("■");
 
     // va en fila 0, columna 5
-    square.setPosicion(0, 5);
-    board.setCurrentPiece(square);
+    ele.setPosicion(0, 5);
+    board.setCurrentPiece(ele);
 
-    // Simulamos ticks suficientes para que llegue al fondo
+    // ticks
     for (int i = 0; i < 15; i++) {
         board.tick();
     }
 
-    // El Square tiene altura 2, así que su fila máxima es 8 (para que no se salga del tablero de 10 filas)
-    assertEquals(8, square.getFila());
+    // El Ele tiene altura 2, así que su fila máxima es 8 (para que no se salga del tablero de 10 filas)
+    assertEquals(7, ele.getFila());
 }
 
 
