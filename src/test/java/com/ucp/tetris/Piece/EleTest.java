@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-//import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 public class EleTest {
   
@@ -65,20 +64,20 @@ public void testEleRotateLeft() {
   assertEquals(expectedRotatedShape, ele.getShape());
 }
 
-@Test
-public void testEleRotateRight270() {
-  Ele ele = new Ele("■");
-  ele.rotateRight();
-  ele.rotateRight();
-  ele.rotateRight();
+  @Test
+  public void testEleRotateRight270() {
+    Ele ele = new Ele("■");
+    ele.rotateRight();
+    ele.rotateRight();
+    ele.rotateRight();
 
-  String symbol = "■";
-  List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
-      Arrays.asList(null, null, symbol),
-      Arrays.asList(symbol, symbol, symbol)));
+    String symbol = "■";
+    List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+        Arrays.asList(null, null, symbol),
+        Arrays.asList(symbol, symbol, symbol)));
 
-  assertEquals(expectedRotatedShape, ele.getShape());
-}
+    assertEquals(expectedRotatedShape, ele.getShape());
+  }
  
 //eleINVERTIDAAAAAAA
 @Test
