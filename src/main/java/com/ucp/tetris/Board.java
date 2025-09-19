@@ -1,8 +1,12 @@
 package com.ucp.tetris;
 
 import java.util.List;
+import java.util.Random;
 
+import com.ucp.tetris.Piece.Dog;
+import com.ucp.tetris.Piece.Ele;
 import com.ucp.tetris.Piece.PieceBase;
+import com.ucp.tetris.Piece.Square;
 
 public class Board implements ITick {
   private final int fila = 10;
@@ -86,7 +90,24 @@ public class Board implements ITick {
         }
     }
 }
-    
+
+public void generarNuevaPieza() {
+    PieceBase nueva;
+    int tipo = new Random().nextInt(3); // 0, 1 o 2
+
+    switch (tipo) {
+        case 0 -> nueva = new Square("■");
+        case 1 -> nueva = new Dog("■");
+        case 2 -> nueva = new Ele("■");
+        default -> nueva = new Square("■");
+    }
+
+    int ancho = nueva.getShape().get(0).size();
+    int columnaInicial = new Random().nextInt(columna - ancho);
+
+    nueva.setPosicion(0, columnaInicial);
+    this.currentPiece = nueva;
+}
 
 
 }
