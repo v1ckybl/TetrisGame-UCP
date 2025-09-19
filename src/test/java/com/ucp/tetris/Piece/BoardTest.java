@@ -18,7 +18,7 @@ public class BoardTest {
     Board board = new Board();
     Ele ele = new Ele("■");
 
-    // va en fila 0, columna 5
+    // empieza en fila 0, columna 5
     ele.setPosicion(0, 5);
     board.setCurrentPiece(ele);
 
@@ -60,6 +60,7 @@ public class BoardTest {
     // debe quedar con su fila inicial en 15
     assertEquals(15, square.getFila());
 }
+
 
 
 
