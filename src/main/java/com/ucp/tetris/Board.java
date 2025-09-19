@@ -1,9 +1,12 @@
 package com.ucp.tetris;
-    
-public class Board {
+
+import com.ucp.tetris.Piece.PieceBase;
+
+public class Board implements ITick {
     private final int fila = 10;
     private final int columna = 20;
     private final int[][] grid;
+    private PieceBase currentPiece; // La pieza que está actualmente en juego
 
     public Board() {
         grid = new int[fila][columna];
@@ -26,4 +29,10 @@ public class Board {
       
       
     }
+
+     @Override
+    public void tick() {
+        if (currentPiece != null) {
+            currentPiece.moveCurrentPieceDown(this); // intenta mover hacia abajo
+        }
 }
