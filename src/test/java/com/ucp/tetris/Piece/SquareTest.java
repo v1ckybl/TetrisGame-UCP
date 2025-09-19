@@ -1,42 +1,24 @@
 package com.ucp.tetris.Piece;
 import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 public class SquareTest {
    
+@Test
+    public void testsquareRotateRightOnce() {
+        Square square = new Square("■");
 
-
-
-   /* 
-    @Test
-    public void rotar90() {
-      Square pieza = new Square("■");
-      String esperado = pieza.getCuadrado();
-
-      assertEquals(esperado, pieza.rotar90());
+        String symbol = "■";
+        List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+            Arrays.asList(symbol, symbol),
+            Arrays.asList(symbol, symbol)));
+        
+        assertEquals(expectedRotatedShape, square.getShape());
     }
-       
-    @Test
-    public void rotar180() {
-      Square pieza = new Square("■");
-      String esperado = pieza.getCuadrado();
 
-      assertEquals(esperado, pieza.rotar180());
-    }
-    
-    @Test
-    public void rotar270() {
-      Square pieza = new Square("■");
-      String esperado = pieza.getCuadrado();
-
-      assertEquals(esperado, pieza.rotar270());
-    }
-    
-    @Test
-    public void rotar360() {
-        Square pieza = new Square("■");
-        String esperado = pieza.getCuadrado();
-
-        assertEquals(esperado, pieza.rotar360()); 
-    }*/
 }
