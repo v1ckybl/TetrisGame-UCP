@@ -43,10 +43,9 @@ public class BoardTest {
         board.tick();
     }
 
-    // La Ele debería quedar en fila 17 (porque mide 3 de alto)
     assertEquals(17, ele.getFila());
 
-    // 2. Ahora tiramos un Square en la misma columna
+    // cae un squaree en la misma columna
     Square square = new Square("■");
     square.setPosicion(0, 5);
     board.setCurrentPiece(square);
@@ -55,7 +54,7 @@ public class BoardTest {
         board.tick();
     }
 
-    // El Square mide 2 de alto, así que debería quedar en fila 15 (encima de la Ele)
+    // square queda sobre la eLe o sea en filaquince
     assertEquals(15, square.getFila());
 }
 
