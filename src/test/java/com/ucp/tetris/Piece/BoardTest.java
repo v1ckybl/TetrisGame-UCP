@@ -31,31 +31,32 @@ public class BoardTest {
   }
 
   @Test
-  public void testSquareCaeEncimaDeEle() {
+    public void testSquareCaeEncimaDeEle() {
     Board board = new Board();
 
+    // 1. Crear la Ele y dejarla caer hasta el fondo
     Ele ele = new Ele("■");
-    ele.setPosicion(0, 5); //bloque q ya esta
+    ele.setPosicion(0, 5);
     board.setCurrentPiece(ele);
 
     for (int i = 0; i < 20; i++) {
-      board.tick();
-
-      assertEquals(1, ele.getFila());
-
-      //sSquare encima en la misma columna
-      Square square = new Square("■");
-      square.setPosicion(0, 5);
-      board.setCurrentPiece(square);
-
-      for (int k = 0; k < 20; k++) {
         board.tick();
-      }
-
-      // debe quedar en fila x arriba de ele
-      assertEquals(16, square.getFila());
     }
 
-  }
+    // La Ele debería quedar en fila 17 (porque mide 3 de alto)
+    assertEquals(17, ele.getFila());
+
+    // 2. Ahora tiramos un Square en la misma columna
+    Square square = new Square("■");
+    square.setPosicion(0, 5);
+    board.setCurrentPiece(square);
+
+    for (int k = 0; k < 20; k++) {
+        board.tick();
+    }
+
+    // El Square mide 2 de alto, así que debería quedar en fila 15 (encima de la Ele)
+    assertEquals(15, square.getFila());
+}
 
 }
