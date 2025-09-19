@@ -45,7 +45,7 @@ public class Board implements ITick {
   @Override
   public void tick() {
     if (currentPiece != null) {
-      currentPiece.moveCurrentPieceDown(this); // intenta mover hacia abajo
+      moveCurrentPieceDown(); // intenta mover hacia abajo
     }
   }
 
