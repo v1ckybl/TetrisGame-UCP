@@ -3,6 +3,7 @@ package com.ucp.tetris.Piece;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ucp.tetris.Board;
 import com.ucp.tetris.IRotar;
 
 public abstract class PieceBase implements IRotar {
@@ -55,6 +56,11 @@ public void setShape(List<List<String>> newShape) {
             rotated.add(newRow);
         }
         return rotated;
+    }
+
+    public void moveCurrentPieceDown(Board board) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'moveCurrentPieceDown'");
     }
 }
 
