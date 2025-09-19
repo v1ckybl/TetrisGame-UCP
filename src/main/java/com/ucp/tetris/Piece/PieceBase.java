@@ -23,7 +23,7 @@ public void setShape(List<List<String>> newShape) {
     }
 
     @Override
-    public static void rotateRight() {
+    public void rotateRight() {
         shape = rotateMatrixRight(shape);
     }
 
