@@ -24,13 +24,34 @@ import com.ucp.tetris.Piece.PieceBase;
 
 import java.util.List;
 
-public class Game {
-    private final Board board;
+public class Game implements ITick{
+    private Board board;  // atributos del juego, como Board, piezas, etc.
 
     public Game(Board board) {
         this.board = board;
     }
 
+    public void spawnPiece(PieceBase piece) {
+        // Lógica para colocar la pieza en la parte superior del tablero
+        // Por ejemplo, podrías centrarla en la parte superior
+        int startCol = (board.getColumna() - piece.getShape().get(0).size()) / 2;
+       
+    }
+
+    @Override
+    public void tick() {
+        // por ejemplo, mover la pieza actual hacia abajo
+        board.moveCurrentPieceDown();
+        // o cualquier otra lógica que deba ejecutarse cada tick
+    }
+}
+
+
+
+
+
+
+    /*
     // Hace caer una pieza hasta la posición más baja posible
     public void dropPiece(PieceBase piece) {
         int[][] grid = board.getGrid();
@@ -75,7 +96,7 @@ public class Game {
         }
         return true;
     }
-
+*/
 
 }
   

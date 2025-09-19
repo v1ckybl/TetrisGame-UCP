@@ -20,4 +20,10 @@ public class Board {
     public int[][] getGrid() {
         return grid;
     }
+
+    public void moveCurrentPieceDown() {
+      // Lógica para mover la pieza actual hacia abajo
+      
+      
+    }
 }
