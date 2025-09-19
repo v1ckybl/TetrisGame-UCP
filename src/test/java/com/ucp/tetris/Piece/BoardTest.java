@@ -9,8 +9,8 @@ public class BoardTest {
     @Test
     public void dimensionesCorrectas() {
         Board b = new Board();
-        assertEquals(10, b.getFila());
-        assertEquals(20, b.getColumna());
+        assertEquals(20, b.getFila());
+        assertEquals(10, b.getColumna());
     }
 
     @Test
@@ -27,8 +27,7 @@ public class BoardTest {
         board.tick();
     }
 
-    // El Ele tiene altura 3, así que su fila máxima es 7 (para que no se salga del tablero de 10 filas)
-    assertEquals(7, ele.getFila());
+    assertEquals(17, ele.getFila());
 }
 
 
