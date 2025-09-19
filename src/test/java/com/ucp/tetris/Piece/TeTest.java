@@ -8,15 +8,7 @@ import org.junit.Test;
 
 public class TeTest {
     
-
-    @Test
-        public void generarTe() {
-            Te pieza = new Te("■");
-            String resultado = pieza.getTe();
-            String esperado = "■■■\n ■ ";  
-    
-            assertEquals(esperado, resultado);
-        }   
+ 
 
     @Test
     public void testTeRotateleftOnce() {

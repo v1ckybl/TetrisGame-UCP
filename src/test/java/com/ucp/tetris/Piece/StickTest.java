@@ -10,7 +10,7 @@ import org.junit.Test;
 public class StickTest {
 
   @Test
-    public void teststickRotateRightOnce() {
+    public void generarStick() {
         Stick stick = new Stick("■");
 
         String symbol = "■";
