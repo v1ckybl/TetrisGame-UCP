@@ -1,24 +1,27 @@
 package com.ucp.tetris.Piece;
 import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 public class StickTest {
 
   @Test
-  public void rotar90() {
-    Stick pieza = new Stick("■");
-    String resultado = pieza.rotarStick90();
-    String esperado = "■■■■";
+    public void teststickRotateRightOnce() {
+        Stick stick = new Stick("■");
 
-    assertEquals(esperado, resultado);
-  }
-
-  @Test
-  public void testStick() {
-    Stick stick = new Stick("■");
-    String expectedString = "■\n■\n■\n■"; // Note the spaces and newlines
-    assertEquals(expectedString, stick.getStick());
-  }
+        String symbol = "■";
+        List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+            Arrays.asList(symbol),
+            Arrays.asList(symbol),
+            Arrays.asList(symbol),
+            Arrays.asList(symbol)));
+        
+        assertEquals(expectedRotatedShape, stick.getShape());
+    }
 
   //test rotar derecha
   @Test
@@ -28,10 +31,38 @@ public class StickTest {
 
     String symbol = "■";
     List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
-        Arrays.asList(symbol, symbol, symbol),
-        Arrays.asList(symbol, null, null)));
+        Arrays.asList(symbol, symbol, symbol, symbol)));
 
     assertEquals(expectedRotatedShape, Stick.getShape());
   }
+
+  @Test
+  public void testStickRotateLeft() {
+    Stick Stick = new Stick("■");
+    Stick.rotateLeft();
+
+    String symbol = "■";
+    List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+        Arrays.asList(symbol, symbol, symbol, symbol)));
+
+    assertEquals(expectedRotatedShape, Stick.getShape());
+  }
+
+@Test
+  public void testStickRotateRight180() {
+    Stick Stick = new Stick("■");
+    Stick.rotateRight();
+    Stick.rotateRight();
+
+    String symbol = "■";
+    List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+        Arrays.asList(symbol),
+        Arrays.asList(symbol),
+        Arrays.asList(symbol),
+        Arrays.asList(symbol)));
+
+    assertEquals(expectedRotatedShape, Stick.getShape());
+  }
+
 
 }
