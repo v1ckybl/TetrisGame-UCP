@@ -18,7 +18,7 @@ public void testEleShapeString() {
 }
 
 
-@Test
+    @Test
     public void rotarDerecha() {
         Ele l = new Ele("L");
 
