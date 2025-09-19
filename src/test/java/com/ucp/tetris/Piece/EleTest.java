@@ -93,7 +93,6 @@ public void testEleRotateLeft() {
         assertEquals(expectedRotatedShape, elelef.getShape());
     }
 
-//test rotar derecha
 @Test
 public void eleInvertidaRotateRight() {
   EleLeft l = new EleLeft("■");
@@ -108,19 +107,31 @@ public void eleInvertidaRotateRight() {
 }
 
 @Test
-    public void eleInvertidaRotateRight180() {
-        EleLeft l = new EleLeft("■");
-        l.rotateRight();
-        l.rotateRight();
+public void eleInvertidaRotateRight180() {
+  EleLeft l = new EleLeft("■");
+  l.rotateRight();
+  l.rotateRight();
 
-        String symbol = "■";
-        List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
-            Arrays.asList(symbol, symbol),
-            Arrays.asList(symbol, null),
-            Arrays.asList(symbol, null)));
-        
-        
-        assertEquals(expectedRotatedShape, l.getShape());
-    }    
+  String symbol = "■";
+  List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+      Arrays.asList(symbol, symbol),
+      Arrays.asList(symbol, null),
+      Arrays.asList(symbol, null)));
+
+  assertEquals(expectedRotatedShape, l.getShape());
+}
+
+@Test
+public void eleInvertidaRotateLeft() {
+  EleLeft l = new EleLeft("■");
+  l.rotateLeft();
+
+  String symbol = "■";
+  List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+      Arrays.asList(symbol, symbol, symbol),
+      Arrays.asList(null, null, symbol)));
+
+  assertEquals(expectedRotatedShape, l.getShape());
+}
 
 }
