@@ -34,19 +34,16 @@ public class BoardTest {
     public void testSquareCaeEncimaDeEle() {
     Board board = new Board();
 
-    // 1. Creamos una Ele y la dejamos caer hasta el fondo
     Ele ele = new Ele("■");
-    ele.setPosicion(0, 5);
+    ele.setPosicion(0, 5); //bloque q ya esta
     board.setCurrentPiece(ele);
 
     for (int i = 0; i < 20; i++) {
-        board.tick(); // la Ele llega al fondo y se fija
-    }
+        board.tick(); 
 
-    // Verificamos que la Ele quedó en fila 17
     assertEquals(17, ele.getFila());
 
-    // 2. Ahora tiramos un Square encima en la misma columna
+    //sSquare encima en la misma columna
     Square square = new Square("■");
     square.setPosicion(0, 5);
     board.setCurrentPiece(square);
@@ -55,9 +52,8 @@ public class BoardTest {
         board.tick();
     }
 
-    // El Square debería caer y detenerse justo arriba de la Ele
-    // Como la Ele ocupa hasta fila 19, el Square (que mide 2 de alto)
-    // debe quedar con su fila inicial en 15
+    
+    // debe quedar en fila 15 arriba de ele
     assertEquals(15, square.getFila());
 }
 
