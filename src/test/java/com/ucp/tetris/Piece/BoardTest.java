@@ -2,7 +2,6 @@ package com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 import com.ucp.tetris.Board;
@@ -34,6 +33,7 @@ public class BoardTest {
 
     assertEquals(17, ele.getFila());
     assertEquals(5, ele.getColumna());
+    
     
     assertTrue(board.getGrid()[17][5] != 0);
     assertTrue(board.getGrid()[18][5] != 0);
