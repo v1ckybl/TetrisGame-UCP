@@ -1,32 +1,33 @@
 package com.ucp.tetris;
 
 import com.ucp.tetris.Piece.PieceBase;
+import com.ucp.tetris.Piece.Ele;
 
-import java.util.List;
-
-public class Game implements ITick{
-  private Board board; // atributos del juego, como Board, piezas, etc.
-  @SuppressWarnings("unused")
-  private PieceBase currentPiece;
-  private int pieceRow;
-  private int pieceCol;
+public class Game implements ITick {
+    private Board board;
 
     public Game(Board board) {
         this.board = board;
-    }
-
-    public void spawnPiece(PieceBase piece) { //pongo la pieza
-        int startCol = (board.getColumna() - piece.getShape().get(0).size()) / 2;
-        this.currentPiece = piece;
-        this.pieceRow = 0;
-        this.pieceCol = startCol;
-        board.fijarPieza(piece, pieceRow, pieceCol); // Assuming Board has a placePiece method
+        board.setCurrentPiece(new Ele("■")); // genera la pieza
     }
 
     @Override
     public void tick() {
-        // por ejemplo, mover la pieza actual hacia abajo
-        board.moveCurrentPieceDown();
-        // o cualquier otra lógica que deba ejecutarse cada tick
+      board.moveCurrentPieceDown();
+    }
+
+    public Board getBoard() {
+      return board;
+    }
+    
+    // timer para tick cada 2 segundos
+    public void start() {
+        java.util.Timer timer = new java.util.Timer();
+        timer.scheduleAtFixedRate(new java.util.TimerTask() {
+            @Override
+            public void run() {
+                tick();
+            }
+        }, 0, 2000);
     }
 }

@@ -17,7 +17,7 @@ public class BoardTest {
     Board board = new Board();
     Square square = new Square("■");
 
-    // Lo colocamos en la fila 0, columna 5
+    // va en fila 0, columna 5
     square.setPosicion(0, 5);
     board.setCurrentPiece(square);
 
