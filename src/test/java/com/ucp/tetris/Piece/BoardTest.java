@@ -33,16 +33,12 @@ public class BoardTest {
     }
 
     assertEquals(17, ele.getFila());
-    assertEquals(18, ele.getFila());
-    assertEquals(19, ele.getFila());
-    assertEquals(20, ele.getFila());
     assertEquals(5, ele.getColumna());
-    assertEquals(6, ele.getColumna());
-
-
-
-
-    assertEquals(5, ele.getColumna());
+    
+    assertTrue(board.getGrid()[17][5] != 0);
+    assertTrue(board.getGrid()[18][5] != 0);
+    assertTrue(board.getGrid()[19][5] != 0);
+    assertTrue(board.getGrid()[19][6] != 0);
     
     }
 
