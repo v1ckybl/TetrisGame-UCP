@@ -20,7 +20,7 @@ public class Game implements ITick{
         this.currentPiece = piece;
         this.pieceRow = 0;
         this.pieceCol = startCol;
-        board.currentPiece(piece, pieceRow, pieceCol); // Assuming Board has a placePiece method
+        board.fijarPieza(piece, pieceRow, pieceCol); // Assuming Board has a placePiece method
     }
 
     @Override
