@@ -9,8 +9,8 @@ import com.ucp.tetris.Piece.PieceBase;
 import com.ucp.tetris.Piece.Square;
 
 public class Board implements ITick {
-  private final int fila = 10;
-  private final int columna = 20;
+  private final int fila = 20;
+  private final int columna = 10;
   private final int[][] grid;
   private PieceBase currentPiece; // La pieza que está actualmente en juego
 
