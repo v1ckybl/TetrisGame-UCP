@@ -12,24 +12,25 @@ public class BoardTest {
         assertEquals(20, b.getColumna());
     }
 
+    @Test
+    public void testSquareCaeHastaElFondo() {
+    Board board = new Board();
+    Square square = new Square("■");
 
-@Test
-    public void testPieceFallsDownOneStepPerTick() throws NoSuchFieldException, IllegalAccessException {
-        Board board = new Board();
-        board.spawnNewPiece(); // La pieza se crea en (0, 4) por defecto
-        
-        // Usamos Reflection para acceder a la posición privada de la pieza en el tablero
-        // Esto se hace para fines de testing, ya que la posición no es pública
-        Field pieceYField = Board.class.getDeclaredField("pieceY");
-        pieceYField.setAccessible(true);
-        int initialY = pieceYField.getInt(board);
+    // Lo colocamos en la fila 0, columna 5
+    square.setPosicion(0, 5);
+    board.setCurrentPiece(square);
 
-        // Simulamos un tick, que debería mover la pieza una fila hacia abajo
-        board.moveCurrentPieceDown();
-        
-        int afterMoveY = pieceYField.getInt(board);
-
-        assertEquals(initialY + 1, afterMoveY, "La pieza debe bajar una posición por cada tick.");
+    // Simulamos ticks suficientes para que llegue al fondo
+    for (int i = 0; i < 15; i++) {
+        board.tick();
     }
 
+    // El Square tiene altura 2, así que su fila máxima es 8 (para que no se salga del tablero de 10 filas)
+    assertEquals(8, square.getFila());
 }
+
+
+}
+
+

@@ -1,5 +1,7 @@
 package com.ucp.tetris;
 
+import java.util.List;
+
 import com.ucp.tetris.Piece.PieceBase;
 
 public class Board implements ITick {
@@ -24,6 +26,10 @@ public class Board implements ITick {
     return grid;
   }
 
+  public void setCurrentPiece(PieceBase pieza) {
+    this.currentPiece = pieza;
+}
+
   public void moveCurrentPieceDown() {
     int nuevaFila = currentPiece.getFila() + 1;
     int columnaActual = currentPiece.getColumna();
@@ -36,7 +42,6 @@ public class Board implements ITick {
     }
 }
 
-
   @Override
   public void tick() {
     if (currentPiece != null) {
@@ -44,28 +49,45 @@ public class Board implements ITick {
     }
   }
 
-
-
-
-    /*Verifica si la pieza puede bajar una fila sin salirse del tablero ni chocar con otra pieza.
     public boolean puedeBajarPieza(PieceBase pieza, int nuevaFila, int columnaActual) {
-        var forma = pieza.getShape(); // matriz de la forma de la pieza
+    List<List<String>> forma = pieza.getShape(); // la forma de la pieza (matriz de símbolos)
 
-        for (int i = 0; i < forma.size(); i++) {
-            for (int j = 0; j < forma.get(i).size(); j++) {
-                if (forma.get(i).get(j) != null) {
-                    int filaDestino = nuevaFila + i;
-                    int columnaDestino = columnaActual + j;
+    for (int i = 0; i < forma.size(); i++) {
+        for (int j = 0; j < forma.get(i).size(); j++) {
+            if (forma.get(i).get(j) != null) {
+                int filaDestino = nuevaFila + i;
+                int columnaDestino = columnaActual + j;
 
-                    // Verifica si se sale del tablero o pisa una celda ocupada
-                    if (filaDestino >= this.fila || columnaDestino < 0 || columnaDestino >= this.columna || grid[filaDestino][columnaDestino] != 0) {
-                        return false;
-                    }
+                // Verifica si se sale del tablero
+                if (filaDestino >= this.fila || columnaDestino < 0 || columnaDestino >= this.columna) {
+                    return false;
+                }
+
+                // Verifica si la celda está ocupada
+                if (grid[filaDestino][columnaDestino] != 0) {
+                    return false;
                 }
             }
         }
-        return true;
-    }*/
+    }
+    return true; // si pasó todas las validaciones, puede bajar
+}
+
+    public void fijarPieza(PieceBase pieza) {
+    List<List<String>> forma = pieza.getShape();
+    int fila = pieza.getFila();
+    int columna = pieza.getColumna();
+
+    for (int i = 0; i < forma.size(); i++) {
+        for (int j = 0; j < forma.get(i).size(); j++) {
+            if (forma.get(i).get(j) != null) {
+                grid[fila + i][columna + j] = 1; // marca la celda como ocupada
+            }
+        }
+    }
+}
+    
+
 
 }
 
