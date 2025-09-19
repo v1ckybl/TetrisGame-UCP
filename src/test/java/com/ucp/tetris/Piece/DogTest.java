@@ -23,6 +23,21 @@ public class DogTest {
     assertEquals(expectedRotatedShape, dog.getShape());
 }
 
+    @Test
+    public void testDogIRotateRightOnce() {
+    DogLeft dog = new DogLeft("■");
+    dog.rotateRight();
 
+    String symbol = "■";
+    List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+        Arrays.asList(null, symbol),
+        Arrays.asList(symbol, symbol),
+        Arrays.asList(symbol, null)
+    ));
+
+    assertEquals(expectedRotatedShape, dog.getShape());
+}
+
+    
 }
 
