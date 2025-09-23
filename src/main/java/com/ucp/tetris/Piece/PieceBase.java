@@ -11,7 +11,7 @@ public abstract class PieceBase implements IRotar {
     public int filaActual;
     public int columnaActual;
 
-/*
+
     public int getFila() {
         return filaActual;
     }
@@ -20,7 +20,7 @@ public abstract class PieceBase implements IRotar {
         return columnaActual;
     }
 
-    
+   /* 
     public void setPosicion(int fila, int columna) {
         this.filaActual = fila;
         this.columnaActual = columna;
