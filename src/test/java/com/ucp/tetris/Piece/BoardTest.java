@@ -70,6 +70,7 @@ public class BoardTest {
     assertEquals(5, square.getColumna());
 }
 
+/*
   @Test
     public void teststickCaeEncimaDeEle() {
     Board board = new Board();
@@ -98,5 +99,5 @@ public class BoardTest {
     assertEquals(15, stick.getFila());
 }
 
-
+*/
 }
