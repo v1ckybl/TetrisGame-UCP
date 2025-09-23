@@ -13,6 +13,7 @@ public class Board implements ITick {
   private final int columna = 10;
   private final int[][] grid;
   private PieceBase currentPiece; // La pieza que está actualmente en juego
+  
 
   public Board() {
     grid = new int[fila][columna];
