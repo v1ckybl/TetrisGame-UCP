@@ -39,7 +39,7 @@ public class BoardTest {
     assertTrue(board.getGrid()[19][6] != 0);*/
     
     }
-    
+
     @Test
     public void testSquareCaeEncimaDeEle() {
     Board board = new Board();
@@ -101,3 +101,6 @@ public class BoardTest {
 
 
 }
+
+//test que limpie 
+//test que no entre más allá del borde
