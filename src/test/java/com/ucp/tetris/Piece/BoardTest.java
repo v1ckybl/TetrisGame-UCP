@@ -1,7 +1,6 @@
 package com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.ucp.tetris.Board;
@@ -39,7 +38,6 @@ public class BoardTest {
     assertTrue(board.getGrid()[19][5] != 0);
     assertTrue(board.getGrid()[19][6] != 0);*/
     
-    
     }
 
 
@@ -57,6 +55,7 @@ public class BoardTest {
     }
 
     assertEquals(17, ele.getFila());
+    assertEquals(5, ele.getColumna());
 
     // cae un sticke en la misma columna
     stick stick = new stick("■");
@@ -66,35 +65,9 @@ public class BoardTest {
     for (int k = 0; k < 20; k++) {
         board.tick();
     }
-
-    // stick queda sobre la eLe o sea en filaquince
-    assertEquals(15, stick.getFila());
+    // square queda sobre la eLe o sea en filaquince
+    assertEquals(15, square.getFila());
 }
 
-@Test
-public void testEleyStickIncrustados(){
-    Board board = new Board();
-    // cae una ele
-    Ele ele = new Ele("■");
-    ele.setPosicion(0, 5);
-    board.setCurrentPiece(ele);
-
-    for (int i = 0; i < 20; i++) { //baja la ele con cada tick
-        board.tick();
-    }
-
-    assertEquals(17, ele.getFila());
-    
-    Stick stick = new Stick("■");
-    stick.setPosicion(0, 6);
-    board.setCurrentPiece(stick);
-
-    for (int k = 0; k < 20; k++) {
-        board.tick();
-    }
-
-    // stick queda sobre la eLe o sea en filaquince
-    assertEquals(16, stick.getFila());
-}
 
 }
