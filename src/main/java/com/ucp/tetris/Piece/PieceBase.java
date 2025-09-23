@@ -11,6 +11,7 @@ public abstract class PieceBase implements IRotar {
     public int filaActual;
     public int columnaActual;
 
+/*
     public int getFila() {
         return filaActual;
     }
@@ -19,7 +20,7 @@ public abstract class PieceBase implements IRotar {
         return columnaActual;
     }
 
-    /*
+    
     public void setPosicion(int fila, int columna) {
         this.filaActual = fila;
         this.columnaActual = columna;
@@ -42,9 +43,10 @@ public void setShape(List<List<String>> newShape) {
 
     @Override
     public void rotateRight() {
-        shape = rotateMatrixRight(shape);
+      shape = rotateMatrixRight(shape);
     }
-
+    
+    //metodos rotaciones
     private List<List<String>> rotateMatrixLeft(List<List<String>> matrix) {
         int rows = matrix.size();
         int cols = matrix.get(0).size();
