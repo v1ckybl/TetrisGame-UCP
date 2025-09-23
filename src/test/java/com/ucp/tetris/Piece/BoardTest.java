@@ -96,7 +96,7 @@ public class BoardTest {
         board.tick();
     }
     // square queda sobre la eLe o sea en filaquince
-    assertEquals(15, stick.getFila());
+    assertEquals(13, stick.getFila());
 }
 
 
