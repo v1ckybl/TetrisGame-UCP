@@ -22,7 +22,7 @@ public class EleLeft extends PieceBase {
       for (String cell : row) {
         sb.append(cell != null ? cell : " ");
       }
-      if (i < shape.size() - 1) { // Check if it's not the last row
+      if (i < shape.size() - 1) { //que no haya un salto de linea mas 
         sb.append("\n");
       }
     }

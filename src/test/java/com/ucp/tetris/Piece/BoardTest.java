@@ -70,7 +70,7 @@ public class BoardTest {
     assertEquals(5, square.getColumna());
 }
 
-/*
+
   @Test
     public void teststickCaeEncimaDeEle() {
     Board board = new Board();
@@ -87,8 +87,8 @@ public class BoardTest {
     assertEquals(17, ele.getFila());
     assertEquals(5, ele.getColumna());
 
-    // cae un sticke en la misma columna
-    Stick stick = new stick("■");
+    // cae un stick en la misma columna
+    Stick stick = new Stick("■");
     stick.setPosicion(0, 5);
     board.setCurrentPiece(stick);
 
@@ -99,5 +99,5 @@ public class BoardTest {
     assertEquals(15, stick.getFila());
 }
 
-*/
+
 }
