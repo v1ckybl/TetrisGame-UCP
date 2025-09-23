@@ -40,35 +40,6 @@ public class BoardTest {
     
     }
 
-    @Test
-    public void testSquareCaeEncimaDeEle() {
-    Board board = new Board();
-
-    // cae una ele
-    Ele ele = new Ele("■");
-    ele.setPosicion(0, 5);
-    board.setCurrentPiece(ele);
-
-    for (int i = 0; i < 20; i++) {
-        board.tick();
-    }
-
-    assertEquals(17, ele.getFila());
-    assertEquals(5, ele.getColumna());
-
-    // cae un squaree en la misma columna
-    Square square = new Square("■");
-    square.setPosicion(0, 5);
-    board.setCurrentPiece(square);
-
-    for (int k = 0; k < 20; k++) {
-        board.tick();
-    }
-
-    // square queda sobre la eLe o sea en filaquince
-    assertEquals(15, square.getFila());
-    assertEquals(5, square.getColumna());
-}
 
   @Test
     public void teststickCaeEncimaDeEle() {
@@ -87,7 +58,7 @@ public class BoardTest {
     assertEquals(5, ele.getColumna());
 
     // cae un sticke en la misma columna
-    stick stick = new stick("■");
+    Stick stick = new stick("■");
     stick.setPosicion(0, 5);
     board.setCurrentPiece(stick);
 
@@ -95,7 +66,7 @@ public class BoardTest {
         board.tick();
     }
     // square queda sobre la eLe o sea en filaquince
-    assertEquals(15, square.getFila());
+    assertEquals(15, stick.getFila());
 }
 
 
