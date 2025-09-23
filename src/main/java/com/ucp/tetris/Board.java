@@ -33,7 +33,17 @@ public class Board implements ITick {
 
   public void setCurrentPiece(PieceBase pieza) {
     this.currentPiece = pieza;
-}
+  }
+
+  public int getFilaPosition() {
+        return currentPiece.filaActual;
+    }
+
+  public int getColumnaPosition() {
+        return currentPiece.columnaActual;
+    }
+
+    
 
   public void setPosicion(PieceBase pieza, int fila, int columna) {
         pieza.filaActual = fila;
