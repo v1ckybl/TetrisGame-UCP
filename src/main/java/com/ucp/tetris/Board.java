@@ -34,6 +34,11 @@ public class Board implements ITick {
     this.currentPiece = pieza;
 }
 
+  public void setPosicion(PieceBase pieza, int fila, int columna) {
+        pieza.filaActual = fila;
+        pieza.columnaActual = columna;
+    }
+
   public void moveCurrentPieceDown() {
     int nuevaFila = currentPiece.getFila() + 1;
     int columnaActual = currentPiece.getColumna();
