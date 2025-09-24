@@ -20,18 +20,18 @@ public abstract class PieceBase implements IRotar {
         return columnaActual;
     }
 
-   /* 
+   
     public void setPosicion(int fila, int columna) {
         this.filaActual = fila;
         this.columnaActual = columna;
     }
-    */
+    
     
     public List<List<String>> getShape() {
     return shape;
 }
 
-public void setShape(List<List<String>> newShape) {
+    public void setShape(List<List<String>> newShape) {
     this.shape = newShape;
 }
 

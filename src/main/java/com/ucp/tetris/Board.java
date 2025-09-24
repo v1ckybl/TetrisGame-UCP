@@ -33,21 +33,12 @@ public class Board implements ITick {
 
   public void setCurrentPiece(PieceBase pieza) {
     this.currentPiece = pieza;
+
   }
 
-  public int getFilaPosition() {
-        return currentPiece.filaActual;
-    }
-
-  public int getColumnaPosition() {
-        return currentPiece.columnaActual;
-    }
-
-    
-
-  public void setPosicion(int fila, int columna) {
-        currentPiece.filaActual = fila;
-        currentPiece.columnaActual = columna;
+  public void spawnPiece(PieceBase pieza, int columnaInicial) {
+        pieza.setPosicion(0, columnaInicial);  // empieza desde fila 0
+        this.currentPiece = pieza;
     }
 
   public void moveCurrentPieceDown() {
@@ -121,8 +112,7 @@ public void generarNuevaPieza() {
     int ancho = nueva.getShape().get(0).size();
     int columnaInicial = new Random().nextInt(columna - ancho);
 
-    nueva.setPosicion(0, columnaInicial);
-    this.currentPiece = nueva;
+    spawnPiece(nueva, columnaInicial);
 }
 
 

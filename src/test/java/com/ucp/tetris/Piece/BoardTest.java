@@ -19,8 +19,7 @@ public class BoardTest {
     Ele ele = new Ele("■");
 
     // empieza en fila 0, columna 5
-    ele.setPosicion(0, 5);  //la posicion la dbe setear EL TABLEROOOOOOO no la pieza
-    board.setCurrentPiece(ele);
+    board.spawnPiece(ele, 5); //agora sii, el tablero settea la pieza
 
     assertEquals(0, ele.getFila());
     assertEquals(5, ele.getColumna());
@@ -46,8 +45,7 @@ public class BoardTest {
 
     // cae una ele
     Ele ele = new Ele("■");
-    ele.setPosicion(0, 5);
-    board.setCurrentPiece(ele);
+    board.spawnPiece(ele, 5);
 
     for (int i = 0; i < 20; i++) {
         board.tick();
@@ -58,8 +56,7 @@ public class BoardTest {
 
     // cae un squaree en la misma columna
     Square square = new Square("■");
-    square.setPosicion(0, 5);
-    board.setCurrentPiece(square);
+    board.spawnPiece(square, 5);
 
     for (int k = 0; k < 20; k++) {
         board.tick();
@@ -77,8 +74,8 @@ public class BoardTest {
 
     // cae una ele
     Ele ele = new Ele("■");
-    ele.setPosicion(0, 5);
-    board.setCurrentPiece(ele);
+    board.spawnPiece(ele, 5);
+
 
     for (int i = 0; i < 20; i++) {
         board.tick();
@@ -89,8 +86,7 @@ public class BoardTest {
 
     // cae un stick en la misma columna
     Stick stick = new Stick("■");
-    stick.setPosicion(0, 5);
-    board.setCurrentPiece(stick);
+    board.spawnPiece(stick, 5);
 
     for (int k = 0; k < 20; k++) {
         board.tick();
