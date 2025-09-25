@@ -172,6 +172,46 @@ public class BoardTest {
 
   }
 
+    @Test
+    public void testLimpiaLinea(){
+      Board board = new Board();
+
+       int[][] grid = board.getGrid();
+
+        // llenar manualmente la fila 5 con "1" (fila completa)
+        for (int j = 0; j < board.getColumna(); j++) {
+            grid[5][j] = 1;
+        }
+
+         // fila 4 tendrá una sola celda ocupada
+        grid[4][0] = 1;
+
+        // ejecutamos la limpieza
+        board.cleanLine();
+
+        // verificar que la fila 5 ahora tiene el contenido de la fila 4 original
+        assertEquals(1, grid[5][0]);
+        for (int j = 1; j < board.getColumna(); j++) {
+            assertEquals(0, grid[5][j]);
+        }
+
+        // verificar que la fila 4 (que se movió desde la fila 3 original) esté vacía
+        boolean fila4Vacia = true;
+        for (int j = 0; j < board.getColumna(); j++) {
+            if (grid[4][j] != 0) {
+                fila4Vacia = false;
+                break;
+            }
+        }
+        assertTrue(fila4Vacia);
+
+        // verificar que la fila 0 también esté vacía
+        for (int j = 0; j < board.getColumna(); j++) {
+            assertEquals(0, grid[0][j]);
+        }
+    }
+
+
 }
 
   
