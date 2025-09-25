@@ -48,7 +48,8 @@ public class Board implements ITick {
     if (puedeBajarPieza(currentPiece, nuevaFila, columnaActual)) {
         currentPiece.setPosicion(nuevaFila, columnaActual); // actualiza la posición
     } else {
-        fijarPieza(currentPiece);     // la deja fija en el tablero
+        fijarPieza(currentPiece); 
+        cleanLine();    // la deja fija en el tablero
         generarNuevaPieza();          // crea una nueva pieza
     }
 }
@@ -115,6 +116,38 @@ public void generarNuevaPieza() {
     spawnPiece(nueva, columnaInicial);
 }
 
+
+public void cleanLine(){
+  for (int i = 0; i < fila; i++) {
+    boolean lineaCompleta = true; // asumo que la línea está completa
+
+
+    for (int j = 0; j < columna; j++) {
+      if (grid[i][j] == 0) {
+        lineaCompleta = false; //SI (if) encuentro un espacio vacío, la línea no está completa
+        break;
+      }
+    }
+    if (lineaCompleta) {
+       removeLine(i); // limpia esa fila y baja las de arriba
+        i--; // chequea la misma fila nuevamente, ya que las filas de arriba bajaron
+    }
+
+  }
+}
+
+  private void removeLine(int line) {
+    for (int i = line; i > 0; i--) {  // baja todas las filas una posición
+        for (int j = 0; j < columna; j++) { // recorre todas las columnas para copiar celda por celda.
+            grid[i][j] = grid[i - 1][j]; // la fila i se reemplaza por la fila i-1 (bajamos la fila de arriba)
+        }
+    }
+
+  
+    for (int j = 0; j < columna; j++) { // ahora es necesario limpiar la fila 0 (la de arriba) porque quedó duplicada o con datos viejos.
+        grid[0][j] = 0; // marca cada celda de la fila 0 como vacía (0).
+    }
+  }
 
 }
 
