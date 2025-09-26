@@ -234,7 +234,7 @@ public class BoardTest {
     // ahora la fila 19 debe estar vacía
     for (int j = 0; j < board.getColumna(); j++) {
         assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]); 
-            "la fila 19 debería estar vacía después de limpiar");
+            
     }
 }
 
