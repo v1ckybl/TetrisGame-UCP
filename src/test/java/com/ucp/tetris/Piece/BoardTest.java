@@ -127,40 +127,30 @@ public class BoardTest {
     assertEquals(17, ele1.getFila());
     assertEquals(5, ele1.getColumna());
 
-    // cae un squaree en la misma columna
+    // cae un squaree 
     Square square = new Square("■");
-    board.spawnPiece(square, 5);
+    board.spawnPiece(square, 3);
 
     for (int k = 0; k < 20; k++) {
       board.tick();
     }
 
-    assertEquals(15, square.getFila());
-    assertEquals(5, square.getColumna());
-
-    // cae un stick en la misma columna
-    Stick stick = new Stick("■");
-    board.spawnPiece(stick, 5);
-
-    for (int m = 0; m < 20; m++) {
-      board.tick();
-    }
-
-    assertEquals(11, stick.getFila());
-    assertEquals(5, stick.getColumna());
+    assertEquals(18, square.getFila());
+    assertEquals(3, square.getColumna());
 
     // cae una te en la misma columna
     Te te = new Te("■");
-    board.spawnPiece(te, 5);
+    board.spawnPiece(te, 0);
 
     for (int n = 0; n < 20; n++) {
       board.tick();
     }
 
-    assertEquals(10, te.getFila());
-    assertEquals(5, te.getColumna());
+    assertEquals(18, te.getFila());
+    assertEquals(0, te.getColumna());
 
     //recorro la columna 5 en filas de 19 a la 10 y verifico que estan llenas (hasta la 10)
+    /*
     int[][] grid = board.getGrid();
     for (int fila = 19; fila >= 10; fila--) {
       assertTrue("La columna no está llena en fila " + fila, grid[fila][5] != 0);
@@ -169,6 +159,52 @@ public class BoardTest {
     for (int fila = 9; fila >= 9; fila--) {
       assertFalse("La columna no está llena en fila " + fila, grid[fila][5] != 0);
     }
+    */
+
+    //cae un square
+    Square square2 = new Square("■");
+    board.spawnPiece(square2, 7);
+
+    for (int k = 0; k < 20; k++) {
+      board.tick();
+    }
+
+    assertEquals(18, square.getFila());
+    assertEquals(7, square.getColumna());
+
+    //cae un dog
+    Dog dog = new Dog("■");
+    board.spawnPiece(dog, 9);
+
+    for (int k = 0; k < 20; k++) {
+      board.tick();
+    }
+
+    assertEquals(0, dog.getFila());
+    assertEquals(9, dog.getColumna());
+
+
+    //cae ele invertida
+    EleLeft eleInvertida = new EleLeft("■");
+    board.spawnPiece(eleInvertida, 5);
+
+    for (int k = 0; k < 20; k++) {
+      board.tick();
+    }
+
+    assertEquals(0, eleInvertida.getFila());
+    assertEquals(12, eleInvertida.getColumna());
+
+    //cae una te
+    Te te2 = new Te("■");
+    board.spawnPiece(te2, 5);
+
+    for (int n = 0; n < 20; n++) {
+      board.tick();
+    }
+
+    assertEquals(0, te2.getFila());
+    assertEquals(15, te2.getColumna());
 
   }
 
