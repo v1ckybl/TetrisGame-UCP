@@ -1,7 +1,6 @@
 package com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.ucp.tetris.Board;
@@ -216,10 +215,12 @@ public class BoardTest {
             assertEquals(0, grid[0][j]);
         }
     }*/
+  }
 
-
+  
     @Test
     public void testCleanLine() {
+
     Board board = new Board();
 
     // llenar la última fila (fila 19) a mano
