@@ -162,7 +162,7 @@ public class BoardTest {
     Stick stick = new Stick("■");
     board.spawnPiece(stick, 9);
 
-    for (int k = 0; k < 20; k++) {
+    while (board.spawnPiece() == stick) {
       board.tick();
     }
 
@@ -172,8 +172,9 @@ public class BoardTest {
     //fila 19 completa
     int[][] grid = board.getGrid();
     for (int j = 0; j < board.getColumna(); j++) {
-    assertEquals(1, grid[19][j]); // toda la fila inferior debe estar llena
-}
+      assertEquals(1, grid[19][j]); // toda la fila inferior debe estar llena
+    }
+  }
 
 
 /* 
