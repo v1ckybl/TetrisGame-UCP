@@ -162,7 +162,7 @@ public class BoardTest {
     Stick stick = new Stick("■");
     board.spawnPiece(stick, 9);
 
-    while (board.spawnPiece() == stick) {
+    for (int n = 0; n < 20; n++) {
       board.tick();
     }
 
