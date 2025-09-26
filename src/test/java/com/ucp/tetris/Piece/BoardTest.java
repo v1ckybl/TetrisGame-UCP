@@ -174,8 +174,7 @@ public class BoardTest {
     int[][] grid = board.getGrid();
     for (int j = 0; j < board.getColumna(); j++) {
     assertEquals(1, grid[19][j]); // toda la fila inferior debe estar llena
-    }
-  }
+}
 
 
 /* 
@@ -233,8 +232,8 @@ public class BoardTest {
 
     // ahora la fila 19 debe estar vacía
     for (int j = 0; j < board.getColumna(); j++) {
-        assertEquals(0, board.getGrid()[19][j], 
-            "la fila 19 debería estar vacía después de limpiar");
+        assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]); 
+            
     }
 }
 
