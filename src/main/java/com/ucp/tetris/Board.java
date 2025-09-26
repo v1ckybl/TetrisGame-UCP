@@ -50,7 +50,7 @@ public class Board implements ITick {
     } else {
         fijarPieza(currentPiece); 
         cleanLine();    // la deja fija en el tablero
-        generarNuevaPieza();          // crea una nueva pieza
+        //generarNuevaPieza();          // crea una nueva pieza
     }
 }
 
