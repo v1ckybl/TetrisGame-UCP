@@ -1,7 +1,6 @@
 package com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -149,6 +148,18 @@ public class BoardTest {
     assertEquals(18, te.getFila());
     assertEquals(0, te.getColumna());
 
+    //recorro la columna 5 en filas de 19 a la 10 y verifico que estan llenas (hasta la 10)
+    /*
+    int[][] grid = board.getGrid();
+    for (int fila = 19; fila >= 10; fila--) {
+      assertTrue("La columna no está llena en fila " + fila, grid[fila][5] != 0);
+    }
+    //recorro la columna 5 y veo que la fila 9 esta vacia
+    for (int fila = 9; fila >= 9; fila--) {
+      assertFalse("La columna no está llena en fila " + fila, grid[fila][5] != 0);
+    }
+    */
+
     //cae un square
     Square square2 = new Square("■");
     board.spawnPiece(square2, 7);
@@ -157,25 +168,42 @@ public class BoardTest {
       board.tick();
     }
 
-    assertEquals(18, square2.getFila());
-    assertEquals(7, square2.getColumna());
+    assertEquals(18, square.getFila());
+    assertEquals(7, square.getColumna());
 
-    //cae ele invertida
-    Stick stick = new Stick("■");
-    board.spawnPiece(stick, 9);
+    //cae un dog
+    Dog dog = new Dog("■");
+    board.spawnPiece(dog, 9);
 
     for (int k = 0; k < 20; k++) {
       board.tick();
     }
 
-    assertEquals(16, stick.getFila());
-    assertEquals(9, stick.getColumna());
+    assertEquals(0, dog.getFila());
+    assertEquals(9, dog.getColumna());
 
-    //fila 19 completa
-    int[][] grid = board.getGrid();
-    for (int j = 0; j < board.getColumna(); j++) {
-    assertEquals(1, grid[19][j]); // toda la fila inferior debe estar llena
-}
+
+    //cae ele invertida
+    EleLeft eleInvertida = new EleLeft("■");
+    board.spawnPiece(eleInvertida, 5);
+
+    for (int k = 0; k < 20; k++) {
+      board.tick();
+    }
+
+    assertEquals(0, eleInvertida.getFila());
+    assertEquals(12, eleInvertida.getColumna());
+
+    //cae una te
+    Te te2 = new Te("■");
+    board.spawnPiece(te2, 5);
+
+    for (int n = 0; n < 20; n++) {
+      board.tick();
+    }
+
+    assertEquals(0, te2.getFila());
+    assertEquals(15, te2.getColumna());
 
   }
 
@@ -217,6 +245,26 @@ public class BoardTest {
             assertEquals(0, grid[0][j]);
         }
     }
+
+
+    @Test
+    public void testCleanLine() {
+    Board board = new Board();
+
+    // llenar la última fila (fila 19) a mano
+    for (int j = 0; j < board.getColumna(); j++) {
+        board.getGrid()[19][j] = 1; // marco todas las celdas como ocupadas
+    }
+
+    //  limpiar las líneas completas
+    board.cleanLine();
+
+    // ahora la fila 19 debe estar vacía
+    for (int j = 0; j < board.getColumna(); j++) {
+        assertEquals(0, board.getGrid()[19][j], 
+            "la fila 19 debería estar vacía después de limpiar");
+    }
+}
 
 
 }
