@@ -163,7 +163,7 @@ public class BoardTest {
     Stick stick = new Stick("■");
     board.spawnPiece(stick, 9);
 
-    for (int k = 0; k < 20; k++) {
+    while (board.spawnPiece() == stick) {
       board.tick();
     }
 
