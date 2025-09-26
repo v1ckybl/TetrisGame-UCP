@@ -162,7 +162,7 @@ public class BoardTest {
     Stick stick = new Stick("■");
     board.spawnPiece(stick, 9);
 
-    for (int n = 0; n < 20; n++) {
+    for (int k = 0; k < 20; k++) {
       board.tick();
     }
 
@@ -176,30 +176,29 @@ public class BoardTest {
     }
   }
 
-  /* 
     @Test
     public void testLimpiaLinea(){
       Board board = new Board();
-  
+
        int[][] grid = board.getGrid();
-  
+
         // llenar manualmente la fila 5 con "1" (fila completa)
         for (int j = 0; j < board.getColumna(); j++) {
             grid[5][j] = 1;
         }
-  
+
          // fila 4 tendrá una sola celda ocupada
         grid[4][0] = 1;
-  
+
         // ejecutamos la limpieza
         board.cleanLine();
-  
+
         // verificar que la fila 5 ahora tiene el contenido de la fila 4 original
         assertEquals(1, grid[5][0]);
         for (int j = 1; j < board.getColumna(); j++) {
             assertEquals(0, grid[5][j]);
         }
-  
+
         // verificar que la fila 4 (que se movió desde la fila 3 original) esté vacía
         boolean fila4Vacia = true;
         for (int j = 0; j < board.getColumna(); j++) {
@@ -209,21 +208,21 @@ public class BoardTest {
             }
         }
         assertTrue(fila4Vacia);
-  
+
         // verificar que la fila 0 también esté vacía
         for (int j = 0; j < board.getColumna(); j++) {
             assertEquals(0, grid[0][j]);
         }
-    }*/
+    }
 
-  @Test
-  public void testCleanLine() {
+    @Test
+    public void testCleanLine() {
 
     Board board = new Board();
 
     // llenar la última fila (fila 19) a mano
     for (int j = 0; j < board.getColumna(); j++) {
-      board.getGrid()[19][j] = 1; // marco todas las celdas como ocupadas
+        board.getGrid()[19][j] = 1; // marco todas las celdas como ocupadas
     }
 
     //  limpiar las líneas completas
@@ -231,8 +230,8 @@ public class BoardTest {
 
     // ahora la fila 19 debe estar vacía
     for (int j = 0; j < board.getColumna(); j++) {
-      assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]);
-
+        assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]); 
+            
     }
   }
 }
