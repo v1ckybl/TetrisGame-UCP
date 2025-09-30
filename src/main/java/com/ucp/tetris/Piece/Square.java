@@ -12,7 +12,7 @@ public class Square extends PieceBase {
             Arrays.asList(symbol, symbol))));
     }
 
-  public String getSquare() {
+  /*public String getSquare() {
         StringBuilder sb = new StringBuilder();
     List<List<String>> shape = getShape();
 
@@ -26,7 +26,7 @@ public class Square extends PieceBase {
       }
     }
     return sb.toString();
-  }
+  }*/
 
 }
 

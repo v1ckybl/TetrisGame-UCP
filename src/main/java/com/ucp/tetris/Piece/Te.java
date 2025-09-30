@@ -12,7 +12,7 @@ public class Te extends PieceBase {
         Arrays.asList(null, symbol, null))));
   }
 
-  public String getTe() {
+  /*public String getTe() {
     StringBuilder sb = new StringBuilder();
     List<List<String>> shape = getShape();
 
@@ -26,6 +26,6 @@ public class Te extends PieceBase {
       }
     }
     return sb.toString();
-  }
+  }*/
 
 }
