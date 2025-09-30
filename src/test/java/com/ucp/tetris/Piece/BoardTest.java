@@ -86,14 +86,15 @@ public class BoardTest {
 
     // cae un stick en la misma columna
     Stick stick = new Stick("■");
-    board.spawnPiece(stick, 5);
+    board.spawnPiece(stick, 6);
 
     for (int k = 0; k < 20; k++) {
       board.tick();
     }
     // square queda sobre la eLe o sea en filaquince
-    assertEquals(13, stick.getFila());
-  }
+    assertEquals(15, stick.getFila());
+
+}
 
   //test que limpie 
   //test que no entre más allá del borde
@@ -208,7 +209,5 @@ public void testComenzarJuego(){
     assertTrue("El juego ha comenzado", board.getStartGame());
     
 }
-
-
 
 }
