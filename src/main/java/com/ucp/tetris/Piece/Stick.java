@@ -14,7 +14,7 @@ public class Stick extends PieceBase {
         Arrays.asList(symbol))));
   }
 
-  public String getStick() {
+  /*public String getStick() {
         StringBuilder sb = new StringBuilder();
     List<List<String>> shape = getShape();
 
@@ -28,7 +28,7 @@ public class Stick extends PieceBase {
       }
     }
     return sb.toString();
-  }
+  }*/
 }
     
 

@@ -234,8 +234,8 @@ public class BoardTest {
     // Llena todas las filas del tablero con Squares
     for (int fila = 0; fila < board.getFila(); fila++) {
       for (int col = 0; col < board.getColumna(); col += 2) {
-        Te te = new Te("■");
-        board.spawnPiece(te, col);
+        DogLeft dogLeft = new DogLeft("■");
+        board.spawnPiece(dogLeft, col);
         for (int t = 0; t < board.getFila(); t++) {
           board.tick();
         }

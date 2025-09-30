@@ -14,7 +14,7 @@ public class Ele extends PieceBase {
             Arrays.asList(symbol, symbol))));
     }
 
-    public String getEle() {
+   /* public String getEle() {
         StringBuilder sb = new StringBuilder();
     List<List<String>> shape = getShape();
 
@@ -28,7 +28,8 @@ public class Ele extends PieceBase {
       }
     }
     return sb.toString();
-  }
+  }*/
+  
 /*
   public Ele(String symbol) {
         setShape (new ArrayList<>(List.of(
