@@ -61,6 +61,10 @@ public class Board implements ITick {
     }
   }
 
+  public void startGame() {
+    tick(); // crea la primera pieza
+}
+
   public boolean puedeBajarPieza(PieceBase pieza, int nuevaFila, int columnaActual) {
     List<List<String>> forma = pieza.getShape(); // la forma de la pieza (matriz de símbolos)
 
