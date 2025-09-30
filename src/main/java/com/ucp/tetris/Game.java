@@ -20,7 +20,7 @@ public class Game implements ITick {
       return board;
     }*/
     
-    // timer para tick cada 2 segundos
+    /*
     public void start() {
         java.util.Timer timer = new java.util.Timer();    //  si no se puede bajar mas la pieza, el tablero  se encarga de fijarla , limpiar lineas y crear una nueva pieza
         timer.scheduleAtFixedRate(new java.util.TimerTask() {
@@ -29,6 +29,6 @@ public class Game implements ITick {
             tick();
           }
         }, 0, 2000);
-    }
+    }*/
 
 } 
