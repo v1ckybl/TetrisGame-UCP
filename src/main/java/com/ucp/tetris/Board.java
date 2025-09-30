@@ -13,6 +13,7 @@ public class Board implements ITick {
   private final int columna = 10;
   private final int[][] grid;
   private PieceBase currentPiece; // La pieza que está actualmente en juego
+  public int filasEliminadas = 0;
 
   public Board() {
     grid = new int[fila][columna];
@@ -118,8 +119,6 @@ public class Board implements ITick {
 public void cleanLine(){
   for (int i = 0; i < fila; i++) {
     boolean lineaCompleta = true; // asumo que la línea está completa
-
-
     for (int j = 0; j < columna; j++) {
       if (grid[i][j] == 0) {
         lineaCompleta = false; //SI (if) encuentro un espacio vacío, la línea no está completa
@@ -127,8 +126,9 @@ public void cleanLine(){
       }
     }
     if (lineaCompleta) {
-       removeLine(i); // limpia esa fila y baja las de arriba
-        i--; // chequea la misma fila nuevamente, ya que las filas de arriba bajaron
+      removeLine(i); // limpia esa fila y baja las de arriba
+      filasEliminadas++;
+      i--; // chequea la misma fila nuevamente, ya que las filas de arriba bajaron
     }
   }
 }
