@@ -243,7 +243,7 @@ public class BoardTest {
       }
     }
 
-    // Intenta ingresar una nueva pieza
+    //intenta ingresar una nueva pieza
     Ele nuevaEle = new Ele("■");
     board.spawnPiece(nuevaEle, 5);
     board.tick(); // intenta moverla
@@ -255,10 +255,9 @@ public class BoardTest {
       }
       System.out.println();
 
-      // Si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
+      // si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
       assertEquals("Perdiste", true, board.gameOver());
-      //assertTrue("Perdiste", board.gameOver());
-    }
 
+    }
   }
 }
