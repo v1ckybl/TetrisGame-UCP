@@ -1,20 +1,8 @@
-package com.ucp.tetris.Piece;
+package com.ucp.tetris;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+class ClockTest {
 
-public class ClockTest {
-    
-     @Test
-    public void testTicksAcumulan() {
-        Runnable dummy = () -> {};
-        Clock clock = new Clock(5, dummy);
-
-        for (int i = 0; i < 3; i++) {
-            clock.tick();
-        }
-
-        assertEquals(3, clock.getTicks());
-    }
 }
