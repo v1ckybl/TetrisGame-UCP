@@ -221,12 +221,36 @@ public class BoardTest {
   }
 
 @Test 
-public void testComenzarJuego(){
+public void testComenzarJuego() {
+  Board board = new Board();
+  board.startGame();
+  board.tick();
+  assertTrue("El juego ha comenzado", board.getStartGame());
+
+}
+
+@Test
+public void testNoSePuedenIngresarMasPiezasCuandoTableroLleno() {
     Board board = new Board();
-    board.startGame();
-    board.tick();
-    assertTrue("El juego ha comenzado", board.getStartGame());
-    
+
+    // Llena todas las filas del tablero con Squares
+    for (int fila = 0; fila < board.getFila(); fila++) {
+        for (int col = 0; col < board.getColumna(); col += 2) {
+            Square square = new Square("■");
+            board.spawnPiece(square, col);
+            for (int t = 0; t < board.getFila(); t++) {
+                board.tick();
+            }
+        }
+    }
+
+    // Intenta ingresar una nueva pieza
+    Square nuevaSquare = new Square("■");
+    board.spawnPiece(nuevaSquare, 0);
+    board.tick(); // intenta moverla
+
+    // Si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
+    assertEquals("La pieza no puede avanzar porque el tablero está lleno", 1, nuevaSquare.getFila());
 }
 
 }
