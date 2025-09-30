@@ -176,37 +176,45 @@ public class BoardTest {
     assertTrue("Se eliminaron filas", board.filasEliminadas > 0); // se elimino la fila
   }
 
-
-@Test
-public void testCompletaCincoLineasYGana() {
+  @Test
+  public void testCompletaCincoLineasYGana() {
     Board board = new Board();
 
     // Cada Square ocupa 2x2, así que para llenar una fila de 10 columnas necesitamos 5 Squares por fila.
     // Vamos a llenar las filas 15 a 19 (5 filas) completamente.
 
     for (int fila = 0; fila < 5; fila++) { // 5 filas
-        for (int col = 0; col < 10; col += 2) { // 5 Squares por fila
-            Square square = new Square("■");
-            board.spawnPiece(square, col);
+      for (int col = 0; col < 10; col += 2) { // 5 Squares por fila
+        Square square = new Square("■");
+        board.spawnPiece(square, col);
 
-            // Simula los ticks para que cada Square llegue a la fila deseada
-            for (int t = 0; t < 20 - (4 - fila); t++) {
-                board.tick();
-            }
+        // Simula los ticks para que cada Square llegue a la fila deseada
+        for (int t = 0; t < 20 - (4 - fila); t++) {
+          board.tick();
         }
+      }
     }
 
     // Ahora deberían haberse eliminado 5 filas
     assertEquals("El jugador gana al eliminar 5 filas", 5, board.filasEliminadas);
-}
- 
+  }
+
 @Test 
 public void testComenzarJuego(){
     Board board = new Board();
     board.startGame();
     assertTrue("El juego ha comenzado", board.getstartGame());
 
+  @Test
+  public void testInicioDelJuego() {
+    Board board = new Board();
+    board.generarNuevaPieza(); // inicia el juego generando la primera pieza
 
+    // Verifica que hay una pieza actual y que está en la fila 0
+    assertTrue("El juego debe tener una pieza actual al iniciar", board.currentPiece != null);
+    assertEquals("La pieza debe estar en la fila inicial", 0, board.currentPiece.getFila());
+  }
+}
 
 
 }

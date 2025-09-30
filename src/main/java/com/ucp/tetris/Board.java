@@ -62,7 +62,7 @@ public class Board implements ITick {
   }
 
   public void startGame() {
-    tick(); // crea la primera pieza
+    generarNuevaPieza(); // creo la primera pieza
 }
 
   public boolean puedeBajarPieza(PieceBase pieza, int nuevaFila, int columnaActual) {
