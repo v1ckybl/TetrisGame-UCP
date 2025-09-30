@@ -38,10 +38,24 @@ public class Board implements ITick {
   }
 
   public void spawnPiece(PieceBase pieza, int columnaInicial) {
-    pieza.setPosicion(0, columnaInicial); // empieza desde fila 0
-    this.currentPiece = pieza;
+    // no spawnea la pieza si al menos una columna de la fila 0 está ocupada
+    for (int col = 0; col < getColumna(); col++) {
+        if (grid[0][col] != 0) {
+            // El juego termina, no se coloca la pieza
+            return;
+        }
+    }
+
+    setCurrentPiece(pieza);
+    // Verifica si la pieza puede colocarse en la posición inicial
+    if (puedeBajarPieza(pieza, 0, columnaInicial)) {
+      pieza.setPosicion(0, columnaInicial); // empieza desde fila 0
+    } else {
+      // No se puede colocar la pieza, el juego termina
+      gameOver();
+    }
   }
-  
+
   public void moveCurrentPieceDown() {
     int nuevaFila = currentPiece.getFila() + 1;
     int columnaActual = currentPiece.getColumna();
@@ -50,8 +64,8 @@ public class Board implements ITick {
       currentPiece.setPosicion(nuevaFila, columnaActual); // actualiza la posición
     } else {
       fijarPieza(currentPiece);// la deja fija en el tablero
-      cleanLine();    
-      generarNuevaPieza();          // crea una nueva pieza
+      cleanLine();
+      generarNuevaPieza(); // crea una nueva pieza
     }
   }
 
@@ -126,43 +140,42 @@ public class Board implements ITick {
     spawnPiece(nueva, columnaInicial);
   }
 
-public void cleanLine(){
-  for (int i = 0; i < fila; i++) {
-    boolean lineaCompleta = true; // asumo que la línea está completa
-    for (int j = 0; j < columna; j++) {
-      if (grid[i][j] == 0) {
-        lineaCompleta = false; //SI (if) encuentro un espacio vacío, la línea no está completa
-        break;
+  public void cleanLine() {
+    for (int i = 0; i < fila; i++) {
+      boolean lineaCompleta = true; // asumo que la línea está completa
+      for (int j = 0; j < columna; j++) {
+        if (grid[i][j] == 0) {
+          lineaCompleta = false; //SI (if) encuentro un espacio vacío, la línea no está completa
+          break;
+        }
+      }
+      if (lineaCompleta) {
+        removeLine(i); // limpia esa fila y baja las de arriba
+        filasEliminadas++;
+        i--; // chequea la misma fila nuevamente, ya que las filas de arriba bajaron
       }
     }
-    if (lineaCompleta) {
-      removeLine(i); // limpia esa fila y baja las de arriba
-      filasEliminadas++;
-      i--; // chequea la misma fila nuevamente, ya que las filas de arriba bajaron
-    }
   }
-}
 
-private void removeLine(int line) {
-    for (int i = line; i > 0; i--) {  // baja todas las filas una posición
-        for (int j = 0; j < columna; j++) { // recorre todas las columnas para copiar celda por celda.
-            grid[i][j] = grid[i - 1][j]; // la fila i se reemplaza por la fila i-1 (bajamos la fila de arriba)
-        }
+  private void removeLine(int line) {
+    for (int i = line; i > 0; i--) { // baja todas las filas una posición
+      for (int j = 0; j < columna; j++) { // recorre todas las columnas para copiar celda por celda.
+        grid[i][j] = grid[i - 1][j]; // la fila i se reemplaza por la fila i-1 (bajamos la fila de arriba)
+      }
     }
 
     for (int j = 0; j < columna; j++) { // ahora es necesario limpiar la fila 0 (la de arriba) porque quedó duplicada o con datos viejos.
-        grid[0][j] = 0; // marca cada celda de la fila 0 como vacía (0).
+      grid[0][j] = 0; // marca cada celda de la fila 0 como vacía (0).
     }
-}
+  }
 
-public boolean gameOver() {
-    // si la fila 0 tiene al menos una celda ocupada, no se puede ingresar más piezas
-    for (int j = 0; j < columna; j++) {
-        if (grid[0][j] != 0) {
+  public boolean gameOver() {
+    // el juego termina si la fila superior está ocupada en al menos una columna
+    for (int col = 0; col < getColumna(); col++) {
+        if (grid[0][col] != 0) {
             return true;
         }
     }
     return false;
 }
-
 }

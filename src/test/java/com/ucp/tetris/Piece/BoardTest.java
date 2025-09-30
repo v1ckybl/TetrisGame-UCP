@@ -84,19 +84,18 @@ public class BoardTest {
     assertEquals(17, ele.getFila());
     assertEquals(5, ele.getColumna());
 
-    // cae un stick en la misma columna
+    // cae un stick 
     Stick stick = new Stick("■");
     board.spawnPiece(stick, 6);
 
     for (int k = 0; k < 20; k++) {
       board.tick();
     }
-    // square queda sobre la eLe o sea en filaquince
+    // stick queda sobre la eLe o sea en filaquince
     assertEquals(15, stick.getFila());
 
-}
+  }
 
-  //test que limpie 
   //test que no entre más allá del borde
   @Test
   public void testSaleDelTablero() {
@@ -118,7 +117,7 @@ public class BoardTest {
 
     // Llenamos la fila 0 manualmente
     for (int j = 0; j < board.getColumna(); j++) {
-        board.getGrid()[0][j] = 1; // ocupamos toda la fila superior
+      board.getGrid()[0][j] = 1; // ocupamos toda la fila superior
     }
 
     // Intentamos generar una nueva pieza
@@ -128,8 +127,8 @@ public class BoardTest {
     // Verificamos si la pieza se pudo colocar
     boolean puedeColocarse = board.puedeBajarPieza(pieza, 0, 0);
 
-   assertFalse("No debería poder colocarse una pieza si la fila 0 está ocupada", puedeColocarse);
-}
+    assertFalse("No debería poder colocarse una pieza si la fila 0 está ocupada", puedeColocarse);
+  }
 
   //test cayeron tantas piezas distintas 
   @Test
@@ -220,37 +219,46 @@ public class BoardTest {
     assertEquals("El jugador gana al eliminar 5 filas", 4, board.filasEliminadas);
   }
 
-@Test 
-public void testComenzarJuego() {
-  Board board = new Board();
-  board.startGame();
-  board.tick();
-  assertTrue("El juego ha comenzado", board.getStartGame());
+  @Test
+  public void testComenzarJuego() {
+    Board board = new Board();
+    board.startGame();
+    board.tick();
+    assertTrue("El juego ha comenzado", board.getStartGame());
 
-}
+  }
 
-@Test
-public void testNoSePuedenIngresarMasPiezasCuandoTableroLleno() {
+  @Test
+  public void testNoSePuedenIngresarMasPiezasCuandoTableroLleno() {
     Board board = new Board();
 
     // Llena todas las filas del tablero con Squares
     for (int fila = 0; fila < board.getFila(); fila++) {
-        for (int col = 0; col < board.getColumna(); col += 2) {
-            Square square = new Square("■");
-            board.spawnPiece(square, col);
-            for (int t = 0; t < board.getFila(); t++) {
-                board.tick();
-            }
+      for (int col = 0; col < board.getColumna(); col += 2) {
+        Square square = new Square("■");
+        board.spawnPiece(square, col);
+        for (int t = 0; t < board.getFila(); t++) {
+          board.tick();
         }
+      }
     }
 
     // Intenta ingresar una nueva pieza
     Square nuevaSquare = new Square("■");
     board.spawnPiece(nuevaSquare, 5);
     board.tick(); // intenta moverla
+    int[][] grid = board.getGrid();
+    for (int i = 0; i < board.getFila(); i++) {
+      System.out.print("Fila " + i + ": ");
+      for (int j = 0; j < board.getColumna(); j++) {
+        System.out.print(grid[i][j] + " ");
+      }
+      System.out.println();
 
-    // Si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
-    assertEquals("La pieza no puede avanzar porque el tablero está lleno", 0, nuevaSquare.getFila());
-}
+      // Si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
+      assertEquals("Perdiste", true, board.gameOver());
+      //assertTrue("Perdiste", board.gameOver());
+    }
 
+  }
 }
