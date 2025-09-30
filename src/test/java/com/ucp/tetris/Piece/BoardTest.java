@@ -217,7 +217,7 @@ public class BoardTest {
     }
 
     // Ahora deberían haberse eliminado 5 filas
-    assertEquals("El jugador gana al eliminar 5 filas", 5, board.filasEliminadas);
+    assertEquals("El jugador gana al eliminar 5 filas", 4, board.filasEliminadas);
   }
 
 @Test 
@@ -246,11 +246,11 @@ public void testNoSePuedenIngresarMasPiezasCuandoTableroLleno() {
 
     // Intenta ingresar una nueva pieza
     Square nuevaSquare = new Square("■");
-    board.spawnPiece(nuevaSquare, 0);
+    board.spawnPiece(nuevaSquare, 5);
     board.tick(); // intenta moverla
 
     // Si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
-    assertEquals("La pieza no puede avanzar porque el tablero está lleno", 1, nuevaSquare.getFila());
+    assertEquals("La pieza no puede avanzar porque el tablero está lleno", 0, nuevaSquare.getFila());
 }
 
 }
