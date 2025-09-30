@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ucp.tetris.Piece.BoardTest" time="0.115" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ucp.tetris.Piece.BoardTest" time="0.1" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -11,9 +11,9 @@
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/local/sdkman/candidates/java/21.0.7-ms/lib"/>
-    <property name="sun.java.command" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter3840021774955980951.jar /workspaces/TetrisGame-UCP/target/surefire 2025-09-30T03-29-42_300-jvmRun1 surefire4778637598110394864tmp surefire_011756102997860648319tmp"/>
+    <property name="sun.java.command" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter6913343952651574409.jar /workspaces/TetrisGame-UCP/target/surefire 2025-09-30T03-48-32_862-jvmRun1 surefire16274192614265282589tmp surefire_017570897946922359186tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.ucp.tetris.Piece.BoardTest#testComenzarJuego"/>
+    <property name="test" value="com.ucp.tetris.Piece.BoardTest#testFilaEliminada"/>
     <property name="surefire.test.class.path" value="/workspaces/TetrisGame-UCP/target/test-classes:/workspaces/TetrisGame-UCP/target/classes:/home/codespace/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/codespace/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/codespace"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter3840021774955980951.jar"/>
+    <property name="surefire.real.class.path" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter6913343952651574409.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-LTS"/>
     <property name="user.name" value="codespace"/>
@@ -55,5 +55,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testComenzarJuego" classname="com.ucp.tetris.Piece.BoardTest" time="0.017"/>
+  <testcase name="testFilaEliminada" classname="com.ucp.tetris.Piece.BoardTest" time="0.01"/>
 </testsuite>

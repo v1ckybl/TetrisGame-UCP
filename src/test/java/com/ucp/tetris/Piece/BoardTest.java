@@ -1,6 +1,7 @@
 package com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -110,6 +111,25 @@ public class BoardTest {
     assertEquals("No se puede mover la pieza", 0, ele.getFila()); // sigue en fila 0
     assertEquals("No se puede mover la pieza", 9, ele.getColumna()); // sigue en columna 9
   }
+
+  @Test
+  public void testEstaLlenoChe() {
+    Board board = new Board();
+
+    // Llenamos la fila 0 manualmente
+    for (int j = 0; j < board.getColumna(); j++) {
+        board.getGrid()[0][j] = 1; // ocupamos toda la fila superior
+    }
+
+    // Intentamos generar una nueva pieza
+    PieceBase pieza = new Square("■"); // o cualquier otra
+    board.spawnPiece(pieza, 0); // la intentamos colocar en columna 0
+
+    // Verificamos si la pieza se pudo colocar
+    boolean puedeColocarse = board.puedeBajarPieza(pieza, 0, 0);
+
+   assertFalse("No debería poder colocarse una pieza si la fila 0 está ocupada", puedeColocarse);
+}
 
   //test cayeron tantas piezas distintas 
   @Test
