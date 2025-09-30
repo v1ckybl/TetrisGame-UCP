@@ -25,9 +25,9 @@ public class Game implements ITick {
         java.util.Timer timer = new java.util.Timer();
         timer.scheduleAtFixedRate(new java.util.TimerTask() {
             @Override
-            public void run() {
-                tick();
-            }
+          public void run() {
+            tick();
+          }
         }, 0, 2000);
     }
 } 

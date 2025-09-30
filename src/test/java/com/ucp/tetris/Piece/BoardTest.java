@@ -175,7 +175,29 @@ public class BoardTest {
 
     assertTrue("Se eliminaron filas", board.filasEliminadas > 0); // se elimino la fila
   }
-    
 
+
+@Test
+public void testCompletaCincoLineasYGana() {
+    Board board = new Board();
+
+    // Cada Square ocupa 2x2, así que para llenar una fila de 10 columnas necesitamos 5 Squares por fila.
+    // Vamos a llenar las filas 15 a 19 (5 filas) completamente.
+
+    for (int fila = 0; fila < 5; fila++) { // 5 filas
+        for (int col = 0; col < 10; col += 2) { // 5 Squares por fila
+            Square square = new Square("■");
+            board.spawnPiece(square, col);
+
+            // Simula los ticks para que cada Square llegue a la fila deseada
+            for (int t = 0; t < 20 - (4 - fila); t++) {
+                board.tick();
+            }
+        }
+    }
+
+    // Ahora deberían haberse eliminado 5 filas
+    assertEquals("El jugador gana al eliminar 5 filas", 5, board.filasEliminadas);
+}
  
 }
