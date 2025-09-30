@@ -41,7 +41,7 @@ public class Board implements ITick {
     pieza.setPosicion(0, columnaInicial); // empieza desde fila 0
     this.currentPiece = pieza;
   }
-
+  
   public void moveCurrentPieceDown() {
     int nuevaFila = currentPiece.getFila() + 1;
     int columnaActual = currentPiece.getColumna();
@@ -155,6 +155,14 @@ private void removeLine(int line) {
     }
 }
 
-
+public boolean gameOver() {
+    // si la fila 0 tiene al menos una celda ocupada, no se puede ingresar más piezas
+    for (int j = 0; j < columna; j++) {
+        if (grid[0][j] != 0) {
+            return true;
+        }
+    }
+    return false;
+}
 
 }
