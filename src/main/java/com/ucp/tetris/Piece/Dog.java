@@ -10,7 +10,7 @@ public class Dog extends PieceBase {
             Arrays.asList(symbol, symbol, null))));
     }
 
-  public String getDog() {
+  /*public String getDog() {
         StringBuilder sb = new StringBuilder();
     List<List<String>> shape = getShape();
 
@@ -24,6 +24,6 @@ public class Dog extends PieceBase {
       }
     }
     return sb.toString();
-  }
+  }*/
 
 }

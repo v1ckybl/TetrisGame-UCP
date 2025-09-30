@@ -1,0 +1,43 @@
+package com.ucp.tetris.Piece;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class DogLeftTest {
+
+    @Test
+    public void testDogLeftRotateRightOnce() {
+    DogLeft DogLeft = new DogLeft("■");
+    DogLeft.rotateRight();
+
+    String symbol = "■";
+    List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+        Arrays.asList(null, symbol),
+        Arrays.asList(symbol, symbol),
+        Arrays.asList(symbol, null)
+    ));
+
+    assertEquals(expectedRotatedShape, DogLeft.getShape());
+}
+
+    @Test
+    public void testDogLeftIRotateRightOnce() {
+    DogLeftLeft DogLeft = new DogLeftLeft("■");
+    DogLeft.rotateRight();
+
+    String symbol = "■";
+    List<List<String>> expectedRotatedShape = new ArrayList<>(Arrays.asList(
+        Arrays.asList(null, symbol),
+        Arrays.asList(symbol, symbol),
+        Arrays.asList(symbol, null)
+    ));
+
+    assertEquals(expectedRotatedShape, DogLeft.getShape());
+}
+
+    
+}
+
