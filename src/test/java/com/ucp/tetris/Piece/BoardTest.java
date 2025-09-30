@@ -1,7 +1,6 @@
 package com.ucp.tetris.Piece;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.ucp.tetris.Board;
@@ -183,7 +182,15 @@ public class BoardTest {
     assertEquals(16, stick.getFila());
     assertEquals(9, stick.getColumna());
 
-    System.out.println("Tablero despues de cuatro piezas:");
+    // Después de esta jugada, al menos la fila 19 debería limpiarse
+    int[][] grid = board.getGrid();
+
+    // Chequeamos que la fila 19 esté vacía
+    for (int j = 0; j < board.getColumna(); j++) {
+        assertEquals(0, grid[19][j]);
+    }
+
+    /*System.out.println("Tablero despues de cuatro piezas:");
     int[][] grid = board.getGrid();
     for (int i = 0; i < board.getFila(); i++) {
       System.out.print("Fila " + i + ": ");
@@ -192,15 +199,17 @@ public class BoardTest {
       }
       System.out.println();
 
-      /*int[][] grid = board.getGrid();
+      int[][] grid = board.getGrid();
       for (int j = 0; j < board.getColumna(); j++) {
       
       assertEquals(1, grid[19][j]); // toda la fila inferior debe estar llena
       //assertEquals(symbol, grid[19][j]); // toda la fila inferior debe estar llena*/
-    }
-  }
+    
+}
+    
+  
 
-  @Test
+  /*@Test
   public void testLimpiaLinea() {
     Board board = new Board();
 
@@ -257,7 +266,7 @@ public class BoardTest {
       assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]);
 
     }
-  }
+  }*/
 
 
   
