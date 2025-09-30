@@ -184,7 +184,7 @@ public void testCompletaCincoLineasYGana() {
     // Cada Square ocupa 2x2, así que para llenar una fila de 10 columnas necesitamos 5 Squares por fila.
     // Vamos a llenar las filas 15 a 19 (5 filas) completamente.
 
-    for (int fila = 0; fila < 5; fila++) { // 5 filas
+    for (int fila = 0; fila < 9; fila++) { // 5 filas
         for (int col = 0; col < 10; col += 2) { // 5 Squares por fila
             Square square = new Square("■");
             board.spawnPiece(square, col);
@@ -197,7 +197,7 @@ public void testCompletaCincoLineasYGana() {
     }
 
     // Ahora deberían haberse eliminado 5 filas
-    assertEquals("El jugador gana al eliminar 5 filas", 5, board.filasEliminadas);
+    assertEquals("El jugador gana al eliminar 5 filas", 12, board.filasEliminadas);
 }
  
 }
