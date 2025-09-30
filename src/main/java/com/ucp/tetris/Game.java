@@ -16,9 +16,9 @@ public class Game implements ITick {
       board.moveCurrentPieceDown();// tick llama a board.move...(que basicamente  actualiz a la posicion de la pieza, fija la pieza en el board si no puede bajar mas, y genera una nueva pieza)
     } 
 
-    public Board getBoard() {// esto hace que la pieza  actual se muestre en el tablero
+    /*public Board getBoard() {// esto hace que la pieza  actual se muestre en el tablero
       return board;
-    }
+    }*/
     
     // timer para tick cada 2 segundos
     public void start() {
