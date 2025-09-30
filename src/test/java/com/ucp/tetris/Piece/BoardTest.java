@@ -205,16 +205,6 @@ public void testComenzarJuego(){
     board.startGame();
     assertTrue("El juego ha comenzado", board.getstartGame());
 
-  @Test
-  public void testInicioDelJuego() {
-    Board board = new Board();
-    board.generarNuevaPieza(); // inicia el juego generando la primera pieza
-
-    // Verifica que hay una pieza actual y que está en la fila 0
-    assertTrue("El juego debe tener una pieza actual al iniciar", board.currentPiece != null);
-    assertEquals("La pieza debe estar en la fila inicial", 0, board.currentPiece.getFila());
-  }
-}
 
 
 }

@@ -62,7 +62,7 @@ public class Board implements ITick {
   }
 
   public void startGame() {
-    generarNuevaPieza(); // creo la primera pieza
+    generarNuevaPieza(); // solo genera la pieza
 }
 
   public boolean puedeBajarPieza(PieceBase pieza, int nuevaFila, int columnaActual) {
