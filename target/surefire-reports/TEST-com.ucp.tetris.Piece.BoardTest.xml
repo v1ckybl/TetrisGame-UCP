@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ucp.tetris.Piece.BoardTest" time="0.004" tests="2" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.ucp.tetris.Piece.BoardTest" time="0.092" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -11,8 +11,9 @@
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/local/sdkman/candidates/java/21.0.7-ms/lib"/>
-    <property name="sun.java.command" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter5549779850553819369.jar /workspaces/TetrisGame-UCP/target/surefire 2025-09-19T05-06-48_384-jvmRun1 surefire9828743815038744050tmp surefire_018279785226085397618tmp"/>
+    <property name="sun.java.command" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter9320143396390581144.jar /workspaces/TetrisGame-UCP/target/surefire 2025-09-29T23-08-18_170-jvmRun1 surefire3803739612487155485tmp surefire_02943616610325420727tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.ucp.tetris.Piece.BoardTest#testLimpiaLinea"/>
     <property name="surefire.test.class.path" value="/workspaces/TetrisGame-UCP/target/test-classes:/workspaces/TetrisGame-UCP/target/classes:/home/codespace/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/codespace/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/codespace"/>
@@ -26,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter5549779850553819369.jar"/>
+    <property name="surefire.real.class.path" value="/workspaces/TetrisGame-UCP/target/surefire/surefirebooter9320143396390581144.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-LTS"/>
     <property name="user.name" value="codespace"/>
@@ -54,38 +55,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="dimensionesCorrectas" classname="com.ucp.tetris.Piece.BoardTest" time="0"/>
-  <testcase name="testSquareCaeHastaElFondo" classname="com.ucp.tetris.Piece.BoardTest" time="0.004">
-    <error message="Unimplemented method &apos;moveCurrentPieceDown&apos;" type="java.lang.UnsupportedOperationException"><![CDATA[java.lang.UnsupportedOperationException: Unimplemented method 'moveCurrentPieceDown'
-	at com.ucp.tetris.Piece.PieceBase.moveCurrentPieceDown(PieceBase.java:79)
-	at com.ucp.tetris.Board.tick(Board.java:46)
-	at com.ucp.tetris.Piece.BoardTest.testSquareCaeHastaElFondo(BoardTest.java:26)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:377)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:284)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:248)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:167)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-]]></error>
-  </testcase>
+  <testcase name="testLimpiaLinea" classname="com.ucp.tetris.Piece.BoardTest" time="0.012"/>
 </testsuite>
