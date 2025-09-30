@@ -136,22 +136,20 @@ public class BoardTest {
 
     assertEquals(18, square.getFila());
     assertEquals(3, square.getColumna());
-    
+
     // cae una te
     Te te = new Te("■");
     te.rotateLeft();
     te.rotateLeft();
 
     board.spawnPiece(te, 0);
-    
+
     for (int n = 0; n < 20; n++) {
       board.tick();
     }
-    
 
     assertEquals(18, te.getFila());
     assertEquals(0, te.getColumna());
-
 
     //cae un square
     Square square2 = new Square("■");
@@ -164,6 +162,15 @@ public class BoardTest {
     assertEquals(18, square2.getFila());
     assertEquals(7, square2.getColumna());
 
+    /*System.out.println("Tablero despues de cuatro piezas:");
+    int[][] grid = board.getGrid();
+    for (int i = 0; i < board.getFila(); i++) {
+      System.out.print("Fila " + i + ": ");
+        for (int j = 0; j < board.getColumna(); j++) {
+          System.out.print(grid[i][j] + " ");
+      }
+      System.out.println();
+      }*/
 
     //cae stick
     Stick stick = new Stick("■");
@@ -176,64 +183,70 @@ public class BoardTest {
     assertEquals(16, stick.getFila());
     assertEquals(9, stick.getColumna());
 
-    
-}
-
-    
-    /*
-    //fila 19 completa
+    System.out.println("Tablero despues de cuatro piezas:");
     int[][] grid = board.getGrid();
-    for (int j = 0; j < board.getColumna(); j++) {
+    for (int i = 0; i < board.getFila(); i++) {
+      System.out.print("Fila " + i + ": ");
+      for (int j = 0; j < board.getColumna(); j++) {
+        System.out.print(grid[i][j] + " ");
+      }
+      System.out.println();
+
+      /*int[][] grid = board.getGrid();
+      for (int j = 0; j < board.getColumna(); j++) {
+      
       assertEquals(1, grid[19][j]); // toda la fila inferior debe estar llena
-    }*/
+      //assertEquals(symbol, grid[19][j]); // toda la fila inferior debe estar llena*/
+    }
+  }
 
-    @Test
-    public void testLimpiaLinea(){
-      Board board = new Board();
+  @Test
+  public void testLimpiaLinea() {
+    Board board = new Board();
 
-       int[][] grid = board.getGrid();
+    int[][] grid = board.getGrid();
 
-        // llenar manualmente la fila 5 con "1" (fila completa)
-        for (int j = 0; j < board.getColumna(); j++) {
-            grid[5][j] = 1;
-        }
-
-         // fila 4 tendrá una sola celda ocupada
-        grid[4][0] = 1;
-
-        // ejecutamos la limpieza
-        board.cleanLine();
-
-        // verificar que la fila 5 ahora tiene el contenido de la fila 4 original
-        assertEquals(1, grid[5][0]);
-        for (int j = 1; j < board.getColumna(); j++) {
-            assertEquals(0, grid[5][j]);
-        }
-
-        // verificar que la fila 4 (que se movió desde la fila 3 original) esté vacía
-        boolean fila4Vacia = true;
-        for (int j = 0; j < board.getColumna(); j++) {
-            if (grid[4][j] != 0) {
-                fila4Vacia = false;
-                break;
-            }
-        }
-        assertTrue(fila4Vacia);
-
-        // verificar que la fila 0 también esté vacía
-        for (int j = 0; j < board.getColumna(); j++) {
-            assertEquals(0, grid[0][j]);
-        }
+    // llenar manualmente la fila 5 con "1" (fila completa)
+    for (int j = 0; j < board.getColumna(); j++) {
+      grid[5][j] = 1;
     }
 
-    @Test
-    public void testCleanLine() {
+    // fila 4 tendrá una sola celda ocupada
+    grid[4][0] = 1;
+
+    // ejecutamos la limpieza
+    board.cleanLine();
+
+    // verificar que la fila 5 ahora tiene el contenido de la fila 4 original
+    assertEquals(1, grid[5][0]);
+    for (int j = 1; j < board.getColumna(); j++) {
+      assertEquals(0, grid[5][j]);
+    }
+
+    // verificar que la fila 4 (que se movió desde la fila 3 original) esté vacía
+    boolean fila4Vacia = true;
+    for (int j = 0; j < board.getColumna(); j++) {
+      if (grid[4][j] != 0) {
+        fila4Vacia = false;
+        break;
+      }
+    }
+    assertTrue(fila4Vacia);
+
+    // verificar que la fila 0 también esté vacía
+    for (int j = 0; j < board.getColumna(); j++) {
+      assertEquals(0, grid[0][j]);
+    }
+  }
+
+  @Test
+  public void testCleanLine() {
 
     Board board = new Board();
 
     // llenar la última fila (fila 19) a mano
     for (int j = 0; j < board.getColumna(); j++) {
-        board.getGrid()[19][j] = 1; // marco todas las celdas como ocupadas
+      board.getGrid()[19][j] = 1; // marco todas las celdas como ocupadas
     }
 
     //  limpiar las líneas completas
@@ -241,11 +254,11 @@ public class BoardTest {
 
     // ahora la fila 19 debe estar vacía
     for (int j = 0; j < board.getColumna(); j++) {
-        assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]); 
-            
+      assertEquals("la fila 19 debería estar vacía después de limpiar", 0, board.getGrid()[19][j]);
+
     }
   }
-}
 
 
   
+}
