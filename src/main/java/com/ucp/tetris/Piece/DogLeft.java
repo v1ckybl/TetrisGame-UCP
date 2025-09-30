@@ -10,7 +10,7 @@ import java.util.List;
             Arrays.asList(null, symbol, symbol))));
     }
 
-  public String getDog() {
+  /*public String getDog() {
         StringBuilder sb = new StringBuilder();
     List<List<String>> shape = getShape();
 
@@ -24,6 +24,6 @@ import java.util.List;
       }
     }
     return sb.toString();
-  }
+  }*/
 
 }
