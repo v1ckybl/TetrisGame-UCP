@@ -14,6 +14,7 @@ public class Board implements ITick {
   private final int[][] grid;
   private PieceBase currentPiece; // La pieza que está actualmente en juego
   public int filasEliminadas = 0;
+  private boolean startGame = false;
 
   public Board() {
     grid = new int[fila][columna];
@@ -62,8 +63,13 @@ public class Board implements ITick {
   }
 
   public void startGame() {
+    startGame = true;
     generarNuevaPieza(); // solo genera la pieza
-}
+  }
+
+  public boolean getStartGame() {
+    return startGame;
+  }
 
   public boolean puedeBajarPieza(PieceBase pieza, int nuevaFila, int columnaActual) {
     List<List<String>> forma = pieza.getShape(); // la forma de la pieza (matriz de símbolos)
@@ -148,5 +154,7 @@ private void removeLine(int line) {
         grid[0][j] = 0; // marca cada celda de la fila 0 como vacía (0).
     }
 }
+
+
 
 }
