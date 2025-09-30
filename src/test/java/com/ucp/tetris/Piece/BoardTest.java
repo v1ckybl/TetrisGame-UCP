@@ -247,17 +247,10 @@ public class BoardTest {
     Ele nuevaEle = new Ele("■");
     board.spawnPiece(nuevaEle, 5);
     board.tick(); // intenta moverla
-    int[][] grid = board.getGrid();
-    for (int i = 0; i < board.getFila(); i++) {
-      System.out.print("Fila " + i + ": ");
-      for (int j = 0; j < board.getColumna(); j++) {
-        System.out.print(grid[i][j] + " ");
-      }
-      System.out.println();
+   
 
-      // si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
-      assertEquals("Perdiste", true, board.gameOver());
+    // si la fila 0 está llena, la pieza no puede avanzar (sigue en fila 0)
+    assertEquals("Perdiste", true, board.gameOver());
 
     }
   }
-}
