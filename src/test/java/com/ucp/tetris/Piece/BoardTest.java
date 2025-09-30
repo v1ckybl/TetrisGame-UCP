@@ -207,8 +207,6 @@ public void testComenzarJuego(){
     assertTrue("El juego ha comenzado", board.getstartGame());
 
 
-
-
 }
 
 
