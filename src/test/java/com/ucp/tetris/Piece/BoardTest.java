@@ -235,8 +235,8 @@ public class BoardTest {
     // Llena todas las filas del tablero con Squares
     for (int fila = 0; fila < board.getFila(); fila++) {
       for (int col = 0; col < board.getColumna(); col += 2) {
-        Square square = new Square("■");
-        board.spawnPiece(square, col);
+        Te te = new Te("■");
+        board.spawnPiece(te, col);
         for (int t = 0; t < board.getFila(); t++) {
           board.tick();
         }
@@ -244,8 +244,8 @@ public class BoardTest {
     }
 
     // Intenta ingresar una nueva pieza
-    Square nuevaSquare = new Square("■");
-    board.spawnPiece(nuevaSquare, 5);
+    Ele nuevaEle = new Ele("■");
+    board.spawnPiece(nuevaEle, 5);
     board.tick(); // intenta moverla
     int[][] grid = board.getGrid();
     for (int i = 0; i < board.getFila(); i++) {
