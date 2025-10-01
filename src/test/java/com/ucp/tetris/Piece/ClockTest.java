@@ -1,7 +1,4 @@
-package com.ucp.tetris;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+package com.ucp.tetris.Piece;
 
 class ClockTest {
 
