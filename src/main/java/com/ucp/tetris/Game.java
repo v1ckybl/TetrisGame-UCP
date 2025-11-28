@@ -1,6 +1,5 @@
 package com.ucp.tetris;
 
-//import com.ucp.tetris.Piece.PieceBase;
 import com.ucp.tetris.Piece.Ele;
 
 public class Game implements ITick {

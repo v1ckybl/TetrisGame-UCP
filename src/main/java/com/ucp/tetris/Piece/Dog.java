@@ -1,7 +1,7 @@
 package com.ucp.tetris.Piece;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
 public class Dog extends PieceBase {
 
   public Dog(String symbol) {
