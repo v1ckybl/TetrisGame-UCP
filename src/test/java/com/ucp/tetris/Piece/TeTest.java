@@ -7,8 +7,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class TeTest {
-    
- 
 
     @Test
     public void testTeRotateleftOnce() {
